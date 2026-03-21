@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" fill="none">
+  <defs>
+    <filter id="sh" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <g filter="url(#sh)">
+    <!-- Body -->
+    <path d="M95 178c-20-14-30-34-30-56 0-38 32-70 72-70 40 0 73 32 73 70 0 34-26 62-60 68l-6 28H114l-9-40z" fill="#ff49c4" stroke="#0d0d0d" stroke-width="10" stroke-linejoin="round"/>
+    <!-- Belly -->
+    <path d="M104 128c0-18 14-32 33-32 19 0 34 14 34 32 0 22-16 40-34 40-20 0-33-18-33-40z" fill="#7cf0ff" fill-opacity="0.7" stroke="#0d0d0d" stroke-width="8" stroke-linejoin="round"/>
+    <!-- Eye -->
+    <circle cx="160" cy="98" r="10" fill="#0d0d0d"/>
+    <!-- Beak -->
+    <path d="M168 120l22 8-18 20c-12 0-22-12-4-28z" fill="#ffe600" stroke="#0d0d0d" stroke-width="10" stroke-linejoin="round"/>
+    <!-- Head shine -->
+    <path d="M124 78c12-20 30-32 56-34" fill="none" stroke="#0d0d0d" stroke-width="8" stroke-linecap="round" opacity="0.22"/>
+  </g>
+</svg>
+

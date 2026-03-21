@@ -1,0 +1,5 @@
+.idea/
+events/
+Thumbs.db
+*.log
+.DS_Store
