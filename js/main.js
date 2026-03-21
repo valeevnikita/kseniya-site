@@ -198,6 +198,75 @@ function initGallery() {
   });
 }
 
+function initLightbox() {
+  const lightbox = $("[data-lightbox]");
+  const imgEl = $("[data-lightbox-img]");
+  const btnPrev = $("[data-lightbox-prev]");
+  const btnNext = $("[data-lightbox-next]");
+  const closers = $$("[data-lightbox-close]");
+  const galleryRoot = $("[data-gallery]");
+  if (!lightbox || !imgEl || !btnPrev || !btnNext || !galleryRoot) return;
+
+  const grid = $(".gallery__grid", galleryRoot);
+  const items = $$("img", grid || galleryRoot).filter((img) => img.getAttribute("src"));
+  if (!items.length) return;
+
+  let index = 0;
+  let lastActive = null;
+
+  const setOpen = (open) => {
+    lightbox.hidden = !open;
+    lightbox.setAttribute("aria-hidden", open ? "false" : "true");
+    document.documentElement.style.overflow = open ? "hidden" : "";
+    if (!open && lastActive) lastActive.focus();
+  };
+
+  const render = () => {
+    const src = items[index].getAttribute("src");
+    imgEl.src = src;
+    imgEl.alt = items[index].getAttribute("alt") || "";
+  };
+
+  const openAt = (i, fromEl) => {
+    lastActive = fromEl || document.activeElement;
+    index = ((i % items.length) + items.length) % items.length;
+    render();
+    setOpen(true);
+  };
+
+  const prev = () => openAt(index - 1);
+  const next = () => openAt(index + 1);
+
+  items.forEach((img, i) => {
+    img.addEventListener("click", (e) => {
+      e.preventDefault();
+      openAt(i, img);
+    });
+  });
+
+  btnPrev.addEventListener("click", (e) => {
+    e.preventDefault();
+    prev();
+  });
+  btnNext.addEventListener("click", (e) => {
+    e.preventDefault();
+    next();
+  });
+  closers.forEach((c) =>
+    c.addEventListener("click", (e) => {
+      e.preventDefault();
+      setOpen(false);
+    })
+  );
+
+  document.addEventListener("keydown", (e) => {
+    if (lightbox.hidden) return;
+    if (e.key === "Escape") setOpen(false);
+    if (e.key === "ArrowLeft") prev();
+    if (e.key === "ArrowRight") next();
+  });
+}
+
 function initFaq() {
   $$(".faq__item").forEach((item) => {
     item.addEventListener("click", () => {
@@ -484,6 +553,7 @@ initMixerImageFallback();
 initParrotFallback();
 initModal();
 initGallery();
+initLightbox();
 initFaq();
 initQuiz();
 initCalcFab();
