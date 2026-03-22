@@ -198,6 +198,30 @@ function initGallery() {
   });
 }
 
+function initReviewsSlider() {
+  const slider = $("[data-reviews-slider]");
+  const track = $("[data-reviews-track]");
+  const prev = $("[data-reviews-prev]");
+  const next = $("[data-reviews-next]");
+  if (!slider || !track || !prev || !next) return;
+
+  const step = (dir) => {
+    const card = $(".review-card", track);
+    const cardWidth = card ? card.getBoundingClientRect().width : 520;
+    const gap = 18;
+    track.scrollBy({ left: dir * (cardWidth + gap), behavior: "smooth" });
+  };
+
+  prev.addEventListener("click", (e) => {
+    e.preventDefault();
+    step(-1);
+  });
+  next.addEventListener("click", (e) => {
+    e.preventDefault();
+    step(1);
+  });
+}
+
 function initLightbox() {
   const lightbox = $("[data-lightbox]");
   const imgEl = $("[data-lightbox-img]");
@@ -553,6 +577,7 @@ initMixerImageFallback();
 initParrotFallback();
 initModal();
 initGallery();
+initReviewsSlider();
 initLightbox();
 initFaq();
 initQuiz();

@@ -584,34 +584,225 @@
       </section>
 
       <section id="reviews" class="section section--alt">
-        <div class="container rf">
-          <div class="rf__left" data-animate>
-            <p class="rf__big">Отзывы</p>
-            <p class="rf__big">Часто<br />задаваемые<br />вопросы</p>
+        <div class="container">
+          <div class="reviews-head" data-animate>
+            <h2 class="h1 reviews-head__title">Отзывы</h2>
+            <div class="reviews-head__nav" aria-label="Навигация по отзывам">
+              <button class="nav-btn" type="button" aria-label="Предыдущий отзыв" data-reviews-prev>‹</button>
+              <button class="nav-btn" type="button" aria-label="Следующий отзыв" data-reviews-next>›</button>
+            </div>
           </div>
-          <div class="rf__right">
-            <div class="reviews" data-animate>
-              <article class="review">
-                <h4>Алексей и Екатерина</h4>
+
+          <div class="reviews-slider" data-animate data-reviews-slider>
+            <div class="reviews-track" data-reviews-track>
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-5.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials"></span>
+                  </div>
+                  <h3 class="review-card__name">Семья Гафуровых</h3>
+                </div>
                 <p>
-                  Всё прошло легко и весело. Гости в восторге, тайминг идеальный, ничего не «просело».
+                  Дорогая наша Ксения 😊💕
+Хотим выразить огромную благодарность за проведение самого яркого события, создание нашей семьи 😊 Спасибо Вам, за созданную тёплую и весёлую атмосферу на свадьбе 😊 Вы замечательно провели торжество и я с 100% уверенностью могу сказать, что вы профессионал своего дела 😊 Гости просто в восторге от Вас.😊 Этот вечер надолго останется в нашем сердце и памяти наших гостей.Огромное вам спасибо, желаем вам дальнейшего процветания и пусть еще миллионы счастливых свадеб и праздников пройдут с участием настоящего профессионала своего дела!
+Мы Вас 💖💕
+
                 </p>
               </article>
-              <article class="review">
-                <h4>Алексей и Яна</h4>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-10.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials"></span>
+                  </div>
+                  <h3 class="review-card__name">Игорь и Ольга Агаповы</h3>
+                </div>
                 <p>
-                  Очень тактичная подача, без пошлостей и неловких конкурсов. DJ и ведущая — топ-связка.
+                  Ксюша! Привет! Все небыло времени написать тебе и выразить слова благодарности за проведение нашей свадьбы
+😊 Было очень весело и гости ни на минуту не заслужили все в восторге и после свадьбы почти каждый день вспоминали о тебе как ты хорошо все провела.
+😊 всем очень понравилось как старшему поколению так и молодёжи. Всё прошло замечательно. Также хотим сказать спасибо диджею за замечательную музыку.
+Мы очень рады что выбрали вас. Спасибо тебе огромное!!!
+🙏🙏🙏 Игорь и Ольга 25.09.2020
+
                 </p>
               </article>
-              <article class="review">
-                <h4>Олег и Оксана</h4>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-4.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials"></span>
+                  </div>
+                  <h3 class="review-card__name">Абдулвалиевы</h3>
+                </div>
                 <p>
-                  Стильно, современно и по делу. Программа была динамичная — гости были заняты и счастливые.
+                  Здравствуйте!!! Только дошли руки написать вам слова благодарности!
+Все было супер! Мы были просто спокойны и расслаблены, знали что вы все разрулите и все будет на высшем уровне! Гости в восторге! Потом многие спрашивали ваши контакты!
+Сказали «Была очень душевная и теплая свадьба» Вы смогли поднять даже тех, на кого мы и ставки не делали 😂
+Просто трехкратно Ура Ура Ура🙏🙏🙏
+Спасибо вам больше за этот день
+
+                </p>
+              </article>
+
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-8.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials"></span>
+                  </div>
+                  <h3 class="review-card__name">Ольга и Юсуф</h3>
+                </div>
+                <p>
+                  Ксюшечка привет. Хочу сказать большое спасибо за проведение нашей свадьбы 😊 Было очень весело и интересно. Все гости были задействованы. И все в меру. Успели и потанцевать и весело провести время. Гостям очень понравилось, все были довольны. Самое интересное в конкурсе с лопатками подумали, что мы заранее готовились и знали все вопросы 😊. А с букетом вообще очень интересно, до конца была интрига😉. Ты профессионал своего дела. Хорошо что мы выбрали тебя😊.
+
+                </p>
+              </article>
+
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-1.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials"></span>
+                  </div>
+                  <h3 class="review-card__name">Сергей и Татьяна Наумовы</h3>
+                </div>
+                <p>
+                  Здравствуйте, семья Наумовых выражает Вам огромную благодарность за проведение самого важного дня в нашей жизни
+❤️
+Все прошло просто замечательно, уютно, по-домашнему, очень весело. Вы не дали заскучать ни одному гостю. Смогли сгладить неудобные ситуации, что сразу показывает Ваш профессионализм и опыт 🥰🥰
+От всей души спасибо Вам 💖💖
+
+                </p>
+              </article>
+
+
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-2.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials"></span>
+                  </div>
+                  <h3 class="review-card__name">Виктория и Александр</h3>
+                </div>
+                <p>
+                  Привет!
+Добралась до телефона, пишу чтоб выразить огромную благодарность вам с мужем за работу! Вы сделали нашу свадьбу незабываемой. Всё прошло так как мы хотели! 😊
+Было очень весело, всё на высшем уровне 🥰 ты классная Ксю, еще раз спасибо огромное! 😊
+
+                </p>
+              </article>
+
+
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-9.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials"></span>
+                  </div>
+                  <h3 class="review-card__name">Анастасия и Денис</h3>
+                </div>
+                <p>
+                  Ксюша, привет
+Хочу выразить огромную благодарность
+Спасибо за поздравления, проведение нашего торжества, нам очень понравилось как вы вели, а про конкурсы это просто огонь, всем понравилось, думаю когда нибудь встретимся на свадьбе какой нибудь
+Спасибочки ещё раз, от семьи Давыдовых . 26.09.2020 🥰❤️
+
+                </p>
+              </article>
+
+
+
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-7.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">ОО</span>
+                  </div>
+                  <h3 class="review-card__name">Пара Плехановых</h3>
+                </div>
+                <p>
+                  Добрый вечер!
+Хочу выразить Вам благодарность, за наш вечер! 😊
+Всем было весело, никто не скучал. Ко мне в конце несколько раз подходили и узнавали ваши контакты😉😉😉
+Спасибо! Все получилось, так как мы хотели 😁😁😁
+
+                </p>
+              </article>
+
+
+
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-6.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials"></span>
+                  </div>
+                  <h3 class="review-card__name">Елена и Олег</h3>
+                </div>
+                <p>
+                  Привет 😊
+Ксюш, спасибо большое тебе за такой вечер, все было супер пупер прям, я давно так не смеялась, спасибо за помощь в организации сюрприза, он понравился всем 💗💖💚💙
+Ты лучшая 💕💓💔💘💜
+
+                </p>
+              </article>
+
+
+
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-3.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials"></span>
+                  </div>
+                  <h3 class="review-card__name">Ирина и Александр Лялины</h3>
+                </div>
+                <p>
+                 Ксения, доброе утро 😊
+Огромное спасибо за проведение нашей свадьбы 😉 Вы профессионал своего дела ❤️❤️❤️
+
+
+                </p>
+              </article>
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-11.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials"></span>
+                  </div>
+                  <h3 class="review-card__name">Антон и Ирина</h3>
+                </div>
+                <p>
+                 Здравствуйте 😊
+Хотим сказать Вам огромное спасибо 💚 свадьба была супер, очень насыщенная программа, гости не сидели на месте, все смеялись и веселились 😄😄😄
+конкурсы прикольные и смешные, всё как мы и хотели особенно всем понравилась фишка с лучшими танцорами города в виде лиц гостей 😉🙏 и спасибо диджето, музыка класс 🙏 и молодёжь и взрослые гости танцевали 🙏 Все были в восторге от Вас🙏🙏
+Очень рады, что выбрали Вас для проведения нашего праздника!!! 🎉🎉
+
+
                 </p>
               </article>
             </div>
+          </div>
+        </div>
+      </section>
 
-            <div id="faq" class="faq" data-animate>
+      <section id="faq" class="section">
+        <div class="container faq-block">
+          <div class="faq-block__left" data-animate>
+            <p class="faq-block__title">Часто<br />задаваемые<br />вопросы</p>
+          </div>
+          <div class="faq-block__right" data-animate>
+            <div class="faq">
               <button class="faq__item" type="button" aria-expanded="false">
                 <span>Какую музыку будет включать DJ?</span>
                 <span class="faq__icon" aria-hidden="true"></span>
@@ -620,24 +811,45 @@
                 </span>
               </button>
               <button class="faq__item" type="button" aria-expanded="false">
-                <span>Есть примерный тайминг и программа?</span>
+                <span>Как будут выстроены поздравления гостей?</span>
                 <span class="faq__icon" aria-hidden="true"></span>
                 <span class="faq__panel">
-                  Да, составлю под ваш формат и площадку. Никаких «конвейерных» сценариев.
+                  Соберу пожелания заранее и встрою в программу так, чтобы всё было красиво и без очередей/заминок.
                 </span>
               </button>
               <button class="faq__item" type="button" aria-expanded="false">
-                <span>Как проходят интерактивы?</span>
+                <span>У вас есть примерный тайминг и программа мероприятия?</span>
                 <span class="faq__icon" aria-hidden="true"></span>
                 <span class="faq__panel">
-                  Коротко, динамично, добровольно. Главный критерий — чтобы было комфортно гостям.
+                  Да — подберу структуру под формат, площадку и гостей. Тайминг согласуем заранее.
                 </span>
               </button>
               <button class="faq__item" type="button" aria-expanded="false">
-                <span>Заключаете официальный договор?</span>
+                <span>Какие будут интерактивы?</span>
                 <span class="faq__icon" aria-hidden="true"></span>
                 <span class="faq__panel">
-                  Да, по запросу. Также фиксируем дату и условия в переписке и предоплатой.
+                  Коротко, динамично, добровольно. Без кринжа, без «заставлять», только то, что подходит гостям.
+                </span>
+              </button>
+              <button class="faq__item" type="button" aria-expanded="false">
+                <span>Как можно развлечь гостей, пока они собираются?</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+                <span class="faq__panel">
+                  Лёгкие welcome‑активности: фото/видео‑зона, интерактивные задания и мини‑общение без микрофона.
+                </span>
+              </button>
+              <button class="faq__item" type="button" aria-expanded="false">
+                <span>Что будет на первой встрече с вами?</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+                <span class="faq__panel">
+                  Бриф, знакомство, стиль мероприятия, блоки программы и пожелания. После — набросок концепции.
+                </span>
+              </button>
+              <button class="faq__item" type="button" aria-expanded="false">
+                <span>За какое время вы с DJ приезжаете на площадку?</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+                <span class="faq__panel">
+                  Обычно заранее, чтобы спокойно всё настроить и сделать саундчек. Время зависит от площадки.
                 </span>
               </button>
             </div>
