@@ -241,17 +241,11 @@ button {
   gap: 10px;
 }
 
-.brand__dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: var(--yellow);
-  box-shadow: 0 0 0 6px rgba(255, 230, 0, 0.15);
-}
-
-.brand__text {
-  font-weight: 600;
-  letter-spacing: 0.02em;
+.brand__logo {
+  height: 50px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35));
 }
 
 .burger {
@@ -462,7 +456,7 @@ button {
 }
 
 .splash__emblem {
-  width: min(220px, 56vw);
+  width: min(130px, 34vw);
   margin: 0 auto;
   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.18));
 }
