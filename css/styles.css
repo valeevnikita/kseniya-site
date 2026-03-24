@@ -544,10 +544,35 @@ button {
   transform: translateY(30px);
 }
 
-.hero__photo {
+.hero__avatar {
   position: relative;
-  width: min(420px, 70vw);
-  filter: drop-shadow(0 30px 70px rgba(0, 0, 0, 0.65));
+  width: min(440px, 66vw);
+  aspect-ratio: 1 / 1;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #0b0b0b;
+  /* Ring: black gap (3–5px) + yellow hoop (3–5px) */
+  box-shadow:
+    0 0 0 5px #0b0b0b,
+    0 0 0 7px var(--yellow),
+    0 30px 70px rgba(0, 0, 0, 0.65);
+}
+
+.hero__photo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: inherit;
+  object-fit: cover;
+  object-position: 50% 45%;
+  transform: scale(1.20);
+  transform-origin: center;
+  will-change: transform;
+}
+
+/* The big yellow circle is replaced by the thin hoop around the avatar */
+.hero__circle {
+  display: none;
 }
 
 /* Video grid */
@@ -652,15 +677,17 @@ button {
 }
 
 .frame {
-  background: rgba(255, 255, 255, 0.06);
+  background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius-lg);
-  padding: 16px;
+  padding: 0;
+  overflow: hidden;
   box-shadow: var(--shadow);
 }
 
 .frame img {
-  border-radius: calc(var(--radius-lg) - 14px);
+  display: block;
+  border-radius: inherit;
   width: 100%;
   height: auto;
 }
