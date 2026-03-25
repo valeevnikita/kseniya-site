@@ -151,8 +151,12 @@ function initModal() {
 
   const openVideo = (src) => {
     if (!src) return;
+    // Prevent duplicate players if click fires twice (e.g. on play button + card)
+    content.innerHTML = "";
     const isYouTube = /youtube\.com|youtu\.be/.test(src);
     const isVimeo = /vimeo\.com/.test(src);
+
+    setOpen(true);
 
     if (isYouTube || isVimeo) {
       const iframe = document.createElement("iframe");
@@ -177,8 +181,6 @@ function initModal() {
       });
       video.play().catch(() => {});
     }
-
-    setOpen(true);
   };
 
   $$("[data-video]").forEach((card) => {
@@ -187,6 +189,7 @@ function initModal() {
 
     const handler = (e) => {
       e.preventDefault();
+      e.stopPropagation();
       openVideo(src);
     };
 
@@ -467,13 +470,7 @@ function initQuiz() {
 
   const sendLead = async (text) => {
     const data = new FormData(form);
-    const method = (data.get("contact_method") || "Telegram").toString();
-
-    if (method === "Telegram") {
-      const url = `https://t.me/SaiRaks11?text=${encodeURIComponent(text)}`;
-      window.open(url, "_blank", "noreferrer");
-      return { ok: true, note: "Открыл Telegram с готовым сообщением." };
-    }
+    const method = (data.get("contact_method") || "VK").toString();
 
     if (method === "VK") {
       try {
@@ -644,7 +641,7 @@ function initQuiz() {
   };
 
   // Default method
-  const defaultMethod = $("input[name=\"contact_method\"][value=\"Telegram\"]", form);
+  const defaultMethod = $("input[name=\"contact_method\"][value=\"VK\"]", form);
   if (defaultMethod && !$("input[name=\"contact_method\"]:checked", form)) defaultMethod.checked = true;
 
   updateUI();
