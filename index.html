@@ -23,7 +23,12 @@
   <body>
     <a class="skip-link" href="#main">Перейти к содержимому</a>
 
-    <div class="splash" data-splash aria-label="Заставка">
+    <div
+      class="splash"
+      data-splash
+      aria-label="Заставка"
+      style="position:fixed;inset:0;z-index:110;background:#ffe600;display:grid;place-items:center;"
+    >
       <div class="splash__inner">
         <img class="splash__emblem" src="assets/logo.png" alt="" aria-hidden="true" />
         <div class="splash__name">Ксения Лазарева</div>
@@ -85,34 +90,55 @@
         <div class="container">
           <div class="section__head" data-animate>
             <h2 class="h2">Видео с мероприятий</h2>
-            <p class="muted">Нажмите на карточку, чтобы открыть ролик.</p>
           </div>
 
-          <div class="video-grid">
-            <article class="video-card" data-animate data-video="assets/sample-video.mp4">
-              <img class="video-card__img" src="assets/video-1-placeholder.svg" alt="" loading="lazy" />
-              <button class="video-card__play" type="button" aria-label="Смотреть видео"></button>
-              <div class="video-card__caption">
-                <p>Свадебный банкет и выездная регистрация</p>
-                <span>Алексея и Екатерины</span>
+          <div class="video-cats" data-video-cats data-animate>
+            <button class="chip is-active" type="button" data-video-cat="wedding">Свадебные</button>
+            <button class="chip" type="button" data-video-cat="jubilee">Юбилейные</button>
+            <button class="chip" type="button" data-video-cat="graduation">Выпускные</button>
+          </div>
+
+          <div class="video-panels">
+            <div class="video-panel" data-video-panel="wedding">
+              <div class="video-rail" aria-label="Свадебные видео">
+                <article class="video-card" data-video="assets/wedding-1.mp4">
+                  <img class="video-card__img" src="assets/wedding-1.jpg" alt="" loading="lazy" />
+                  <button class="video-card__play" type="button" aria-label="Смотреть видео"></button>
+                </article>
+                <article class="video-card" data-video="assets/wedding-2.mp4">
+                  <img class="video-card__img" src="assets/wedding-2.jpg" alt="" loading="lazy" />
+                  <button class="video-card__play" type="button" aria-label="Смотреть видео"></button>
+                </article>
+                <article class="video-card" data-video="assets/wedding-3.mp4">
+                  <img class="video-card__img" src="assets/wedding-3.jpg" alt="" loading="lazy" />
+                  <button class="video-card__play" type="button" aria-label="Смотреть видео"></button>
+                </article>
+                <article class="video-card" data-video="assets/wedding-4.mp4">
+                  <img class="video-card__img" src="assets/wedding-4.jpg" alt="" loading="lazy" />
+                  <button class="video-card__play" type="button" aria-label="Смотреть видео"></button>
+                </article>
+                <article class="video-card" data-video="assets/wedding-5.mp4">
+                  <img class="video-card__img" src="assets/wedding-5.jpg" alt="" loading="lazy" />
+                  <button class="video-card__play" type="button" aria-label="Смотреть видео"></button>
+                </article>
+                <article class="video-card" data-video="assets/wedding-6.mp4">
+                  <img class="video-card__img" src="assets/wedding-6.jpg" alt="" loading="lazy" />
+                  <button class="video-card__play" type="button" aria-label="Смотреть видео"></button>
+                </article>
+                <article class="video-card" data-video="assets/wedding-7.mp4">
+                  <img class="video-card__img" src="assets/wedding-7.jpg" alt="" loading="lazy" />
+                  <button class="video-card__play" type="button" aria-label="Смотреть видео"></button>
+                </article>
               </div>
-            </article>
-            <article class="video-card" data-animate data-video="assets/sample-video.mp4">
-              <img class="video-card__img" src="assets/video-2-placeholder.svg" alt="" loading="lazy" />
-              <button class="video-card__play" type="button" aria-label="Смотреть видео"></button>
-              <div class="video-card__caption">
-                <p>Свадебный банкет и выездная регистрация</p>
-                <span>Александра и Полины</span>
-              </div>
-            </article>
-            <article class="video-card" data-animate data-video="assets/sample-video.mp4">
-              <img class="video-card__img" src="assets/video-3-placeholder.svg" alt="" loading="lazy" />
-              <button class="video-card__play" type="button" aria-label="Смотреть видео"></button>
-              <div class="video-card__caption">
-                <p>Свадебный банкет</p>
-                <span>Михаила и Марии</span>
-              </div>
-            </article>
+            </div>
+
+            <div class="video-panel" data-video-panel="jubilee" hidden>
+              <p class="muted">Юбилейные видео добавим чуть позже.</p>
+            </div>
+
+            <div class="video-panel" data-video-panel="graduation" hidden>
+              <p class="muted">Выпускные видео добавим чуть позже.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -487,10 +513,6 @@
 
                     <div class="quiz__methods">
                       <label class="check">
-                        <input type="radio" name="contact_method" value="VK" />
-                        <span>Отправить в VK</span>
-                      </label>
-                      <label class="check">
                         <input type="radio" name="contact_method" value="Telegram" />
                         <span>Отправить в Telegram</span>
                       </label>
@@ -529,7 +551,7 @@
                 <pre class="result" data-quiz-text></pre>
                 <div class="quiz__result-actions">
                   <button class="btn btn--primary" type="button" data-quiz-copy>Скопировать</button>
-                  <a class="btn btn--ghost" href="tel:+79271152333">Позвонить</a>
+                  <a class="btn btn--ghost" href="tel:+79278356376">Позвонить</a>
                 </div>
               </div>
             </form>
@@ -908,7 +930,7 @@
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
                     <img src="assets/review-19.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
-                    <span class="review-card__initials"></span>
+                    <span class="review-card__initials">ЕЛ</span>
                   </div>
                   <h3 class="review-card__name">Евгений и Лилия</h3>
                 </div>
@@ -921,7 +943,7 @@
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-11.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/review-20.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials"></span>
                   </div>
                   <h3 class="review-card__name">Семья Ляховых</h3>
@@ -932,7 +954,501 @@
 Мы от тебя в восторге) Всё было классно👩‍🎓👨‍🎓 Гости довольны, всем всё понравилось😍😍😍 Ты замечательная)) Спасибо тебе огромное за этот день😍😍😍 Ты яркая, позитивная и весёлая❤️
 Мы все под впечатлением, столько эмоций😍😍😍 Твои конкурсы ещё долго будем вспоминать с улыбкой😍😍😍 Всё было в лучшем виде❤️❤️❤️
 
+                </p>
+              </article>
 
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-21.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials"></span>
+                  </div>
+                  <h3 class="review-card__name">Кафорины</h3>
+                </div>
+                <p>
+                  Ксюша, спасибо за прекрасно проведён вечер!!! Свадьба удалась!!! Веселье было на высоте!!!
+
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-22.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials"></span>
+                  </div>
+                  <h3 class="review-card__name">Марина и Евгений</h3>
+                </div>
+                <p>
+                  Дорогая Ксюша!
+Хотим сказать вам огромное спасибо за проведение самого незабываемого дня в нашей жизни!!! Весь вечер нашего торжества пролетел на одном дыхании! В тебе много энергии, очарования, силы и безудержного веселья, которое ты отдаёшь гостям. Ты очень крутая.
+P. S.: если хотите отмечать свадьбу, юбилеи и другие прекрасные события, то обращайтесь к Ксюше, всё будет на высшем уровне.
+Спасибо большое 😊😊😊
+Семья Кудайбердиевых. ❤️❤️❤️
+
+                  
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-23.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials"></span>
+                  </div>
+                  <h3 class="review-card__name">Влад и Евдокия</h3>
+                </div>
+                <p>
+                  Привет)) Дорогая Ксюша, хотим сказать еще раз ОГРОМНОЕ СПАСИБО Вам за лучший праздник в нашей жизни) 😊
+Вы помогли сделать наш день незабываемым, веселым и ярким! 😁 Конкурсы были веселые и не пошлые! Особенно всем запомнился конкурс караоке с подарком в виде «музыкального центра» 😉
+💃 Мы не ошиблись в своем выборе, выбирая Вас! Вы мастер своего дела!))
+Удачи Вам, Ксюша, мы будем Вас рекомендовать всем)))
+
+                  
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-24.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">В</span>
+                  </div>
+                  <h3 class="review-card__name">Вьюновы</h3>
+                </div>
+                <p>
+                  Ксюш, огромное спасибо за легкую, ненавязчивую, энергичную, а в итоге — самую лучшую свадьбу! 😂😂 Всё было идеально! 😂😅 Гости рады, довольны и мы счастливы — это восторг! 😂😄 Ты понравилась абсолютно всем! 😂😄 Профессионал своего дела! 😂😄 (да и я, если честно, знала, кого выбираю 😂😄)
+Ещё раз спасибо, «Наталья Андревна» 😂😊
+
+                  
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-25.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials"></span>
+                  </div>
+                  <h3 class="review-card__name">Семья Валитовых</h3>
+                </div>
+                <p>
+                  Спасибо вам большое за проведение такого значимого дня для нас 😊 Все гости довольные, всем очень понравилось, как наша тамада развлекала гостей, конкурсы в самый раз, веселые, и без пошлостей.
+Будем всем рекомендовать вас 🥰 Ещё раз, огромное спасибо 😊😊
+
+                  
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-26.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">СП</span>
+                  </div>
+                  <h3 class="review-card__name">Семья Поповых</h3>
+                </div>
+                <p>
+                  Ксюююш! Пишем ещё под впечатлением от нашей свадьбы, которую ты вела 15.02.20!
+Мы в полном восторге от вечера, который стал таким незабываемым благодаря твоему юмору, невероятной энергетике, таланту, умению ненавязчиво и непринуждённо расшевелить и увлечь происходящим любого гостя! Ксения — это ЧЕЛОВЕК-ПРАЗДНИК!!!! Наши гости вместе с нами очень не хотели, чтобы вечер заканчивался. Хотелось праздновать ещё и ещё, и это твоя заслуга как великолепного ведущего!!! Понравилось абсолютно всё: и программа вечера, и конкурсы, и музыкальное и световое сопровождение, ну и, конечно, ты сама!!!
+Спасибо огромное за великолепный праздник от нас и наших гостей!!!!!!!!!! Мы ТЕБЯ ЛЮБИМ ❤️❤️❤️
+Если задумаем ещё какой-нибудь "большой" праздник, то ты, как замечательная и очень классная ведущая, в нашем списке на 1 месте в качестве ведущего и, конечно же, гостья 🥰🥰🥰
+
+                  
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-27.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">ДА</span>
+                  </div>
+                  <h3 class="review-card__name">Дмитрий и Анастасия</h3>
+                </div>
+                <p>
+                  Дорогая Ксюша
+От нашей семьи хотим поблагодарить тебя за незабываемый день!
+Все гости были в восторге от такой ведущей!!!
+Всем понравились разнообразные конкурсы без всяких пошлостей 😁😁😁
+Ты мастер своего дела!
+Мы ни разу не пожалели о своём выборе.
+
+                  
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-28.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">НЮ</span>
+                  </div>
+                  <h3 class="review-card__name">Никита и Юлия Ивановы</h3>
+                </div>
+                <p>
+                  От всей души благодарим Вас за бомбезную атмосферу, созданную на свадьбе 🙏🙏🙏
+С первой встречи с Вами мы были уверены, что торжество пройдет так, как мы мечтали и планировали 🙂 На празднике мы увидели профессионала и были спокойны за самый важный день в нашей жизни 🙂
+Вы замечательно провели торжество, а сама программа была запоминающейся и зажигательной 🙌 Этот момент отметили все гости 🙏 Большое Вам спасибо 🙏❤️ Мы с огромным удовольствием станем рекомендовать Вас друзьям, родственникам и знакомым 🙏🙏🙏
+С УВАЖЕНИЕМ СЕМЬЯ ИВАНОВЫХ (Никита и Юлия) 🙏🙏🙏
+17.08.19
+
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-29.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">СМ</span>
+                  </div>
+                  <h3 class="review-card__name">Семья Марусиных</h3>
+                </div>
+                <p>
+                  Дорогая Ксюша, хотим поблагодарить тебя за проделанную работу, за нашу свадьбу!
+Гости в восторге! Ты супер ведущая 🥰🥰🥰
+💗 Помогла во многих вещах, подсказывала и поддерживала 💗
+09.08.2019 💗
+
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-30.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">С</span>
+                  </div>
+                  <h3 class="review-card__name">Статенины</h3>
+                </div>
+                <p>
+                  Добрый день, Ксения)
+Наконец-то нашлось время написать Вам отзыв)
+Хочу поблагодарить) Всё прошло идеально! Программа вечера была очень интересной) было очень смешно, лично я смеялась от души)
+Все гости остались довольны, как и мы с мужем)
+Вечер вспоминаем с улыбкой на лице)
+Спасибо Вам огромное) Вы профессионал! Дальнейшего процветания Вам в вашей сфере)
+
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-31.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">СП</span>
+                  </div>
+                  <h3 class="review-card__name">Семья Пылёвых</h3>
+                </div>
+                <p>
+                  Привет Ксюш. Хочу поблагодарить тебя за то, что ты сделала наш праздник ярким и незабываемым. Ты большая умничка. Я даже представить не могла, что будет так весело и оригинально. Нам с мужем всё очень понравилось. Извиняюсь, что с опозданием пишу. На днях фотки получили, воспоминания нахлынули)))
+
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-32.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">ВЕ</span>
+                  </div>
+                  <h3 class="review-card__name">Виктор и Екатерина</h3>
+                </div>
+                <p>
+                  Наша Ксюша.. спасибо огромное
+Ты не просто ведущая свадьбы.. ты гость, умеющий задавать настроение свадьбе 😊
+Ты шикарный профессионал своего дела 😉
+Гости просто в восторге от тебя. Никто не скучал ни одной минутки, начиная от друзей и заканчивая бабушкой 70 лет 😂
+С тобой молодожены на свадьбе отдыхают и не напрягаются, потому что ты решаешь все сложности 😁
+Спасибо огромное, мы в восторге от нашего праздника 🥰
+
+
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-33.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">ДА</span>
+                  </div>
+                  <h3 class="review-card__name">Дмитрий и Анастасия</h3>
+                </div>
+                <p>
+                  Ксюш, приветик:)
+Вот только проводили всех гостей, разложили все мысли по полкам и пришло время отблагодарить тебя)
+Ты звезда!:)
+Нереальнейшая 🥰 🥰 🥰
+Ты сделала наш праздник абсолютно таким, как мы хотели, добавив в него только крутость и того, чего ему не хватало!!!:)
+Мы от тебя без ума, творческих успехов Вам, кучи заказов, крутых клиентов и всего самого лучшего
+
+
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-34.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">СП</span>
+                  </div>
+                  <h3 class="review-card__name">Семья Петровых</h3>
+                </div>
+                <p>
+                  Дорогая наша Ксюша!
+Хотим выразить огромную благодарность от нашей семьи за проведённый праздник!
+Ты волшебница, ты крутая, ты мастер своего дела! Все-все до одного в восторге от тебя и твоей программы! Спасибо тебе огромное! Хочется пожелать тебе успехов и процветания! 😍💕
+❤️ p.s. Ребята, если вы ещё не решили, кто проведёт ваш самый главный день — не думайте, Ксюша — это лучший выбор!
+
+
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-35.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">СС</span>
+                  </div>
+                  <h3 class="review-card__name">Семья Статениных</h3>
+                </div>
+                <p>
+                  Огромная благодарность нашей ведущей главного праздника — Ксении!!! Спасибо за организацию, за подбор конкурсов и соревнований, подбор музыкального сопровождения!!!! Праздник с вами, Ксения, прошел на одном дыхании!!!! Спасибо за организацию просто невероятно красивого праздника!!!!! Теперь все праздники и юбилеи — только с вами!!!!! 💗💗💗
+
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-36.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">СМ</span>
+                  </div>
+                  <h3 class="review-card__name">Семья Мухановых</h3>
+                </div>
+                <p>
+                  Ксюша!!! 😂 Хотим от семьи Махуновых выразить тебе благодарность за проведение свадьбы! Было всё ну ооооочень круто! Гости довольны, мы в восторге! Ты просто мастер своего дела! Прекрасные конкурсы, не устаревшие, культурные... Музыкой тоже остались довольны. Время пролетело как один миг, было очень весело, душевно. На протяжении всего вечера не чувствовалось напряжения, каких-то пауз... Спасибо тебе, желаем хороших, добрых клиентов! 😊😊
+
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-37.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">МК</span>
+                  </div>
+                  <h3 class="review-card__name">Максим и Кристина Васины</h3>
+                </div>
+                <p>
+                  Привет😊 Наша свадьба прошла на отлично благодаря тебе! Ты как всегда была на высоте, все гости были в восторге, подходили к нам, говорили «какая классная у вас Ведущая»💖 Спасибо за крутую программу и конкурсы!❤️
+
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-38.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">АС</span>
+                  </div>
+                  <h3 class="review-card__name">Артем и Светлана</h3>
+                </div>
+                <p>
+                  Привет Ксюша!
+Спасибо тебе большое за весёлую, душевную, яркую программу на нашей свадьбе! 😊 Благодаря тебе и, конечно же, нашим весёлым гостям это был незабываемый день в нашей жизни! 😁 Все гости и мы были в восторге от тебя! 🎉 Некоторые люди уже хотят тебя пригласить в качестве ведущей на свои праздники 😊 Ты нам во многом помогла, советовала, как лучше провести наш свадебный день! 😊 Ты очень отзывчивый, добрый человек! 😊 Продолжай в том же духе! 🥰 Мы будем рекомендовать всем только тебя как ведущую на праздники!
+
+
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-39.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">АМ</span>
+                  </div>
+                  <h3 class="review-card__name">Александр и Мария</h3>
+                </div>
+                <p>
+                  Ксюша, дорогая, спасибо Вам огромное за праздник, за то веселье, что Вы дали :) Гости с Вами не скучали :) всё было на позитиве :)
+Всем всё очень понравилось :)
+
+
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-40.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">ВВ</span>
+                  </div>
+                  <h3 class="review-card__name">Влад и Валентина</h3>
+                </div>
+                <p>
+                  Привет))) Большое спасибо за праздник, за то веселье, которое нам подарила Ты, всем очень понравилось и все гости были очень и очень довольны)) Спасибо тебе большое 😊😊
+
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-42.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">ИК</span>
+                  </div>
+                  <h3 class="review-card__name">Иван и Карина</h3>
+                </div>
+                <p>
+                  12.07.2019 Был день создания семьи Кузнецовых 😂 💖 😁 Мы молодые многого не знаем, но это не обязательно, когда есть Ксюша! Этот светлый, яркий, невероятно позитивный человечек делает уже второй праздник для нашей семьи неповторимым 😊 Она всегда подскажет о всех обязательных свадебных традициях 🎉, поддержит в трудные минуты выбора и поиска немаловажных фигур в оформлении праздника 😄. Таких как дизайнер, флорист, выбор кафе и т.д. Если ничего не знаете и никуда не ходите, просто пишите Ксюше, она подскажет ВСЕ! И самое главное — у нее никогда нет цели заработать на вас, она хочет одного, чтобы ваш праздник вы запомнили надолго и ни минуты на нем не грустили! 💖 Ксюша, мы тебя любим! 😍 Обязательно позовём провести для нас Оловянную свадьбу, если ещё будешь работать 😘😘😘
+
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-42.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">ДД</span>
+                  </div>
+                  <h3 class="review-card__name">Денис и Диана</h3>
+                </div>
+                <p>
+                  Спасибо большое тебе за этот вечер! Он получился весёлым, беззаботным, трогательным и интересным! 🥰 Никто не остался без внимания, оригинальные конкурсы понравились и нам, и всем гостям ✨ Мы очень рады, что выбрали именно тебя в качестве ведущей нашего праздника, всё было на высоте ❤️
+
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-43.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">ПЮ</span>
+                  </div>
+                  <h3 class="review-card__name">Павел и Юлия</h3>
+                </div>
+                <p>
+                  Ксюшенька 🥰 🥰 🥰 уже наша дорогая и любимая!! Нет слов, чтобы передать свои эмоции ... было всё на высоте! Всем гостям очень понравилось, все очень довольны, абсолютно все!!! Спасибо за поддержку в течение дня, за прекрасное проведение нашего дня! Всё пронеслось как один миг, на одном дыхании хотелось ещё и ещё ваших конкурсов )) Всё было супер! Особенно ваш фирменный танец !! Спасибо огромное вам с диджеем !! Мы вас полюбили 💕💕💕
+Ваши Павел и Юлия 😊 😊 😊
+
+
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-44.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">ВТ</span>
+                  </div>
+                  <h3 class="review-card__name">Валерий и Татьяна</h3>
+                </div>
+                <p>
+                  Спасибо, Вам, Ксения за проведение нашего торжества! 🥰 Спасибо, что были с нами в этот день! Спасибо Вам за позитив, эмоции и отличное настроение на нашей свадьбе!
+Мы рады, что не ошиблись с выбором ведущего и диджея!
+Все гости остались довольны, до сих пор вспоминают танец с фото-масками (это действительно круто) и сценку в крутых костюмах и масках. Успехов Вам!
+
+
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-45.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">СМ</span>
+                  </div>
+                  <h3 class="review-card__name">Семья Мироновых</h3>
+                </div>
+                <p>
+                  Золотая наша Ксюша, спасибо огромное тебе за этот великолепный день !!! Всё было просто шикарно !!! Иначе и не скажешь ! Гости улыбались, веселились, пели, танцевали ! Даже тот гость, который обычно всегда молчит, запел (да ещё каааак) — и всё благодаря тебе !!!!
+Многие уходили со словами о том, как им понравилось и какая классная ведущая у нас была !!! Кое-кто даже просил твои контакты 😁 ВООБЩЕМ, СПАСИБО БОЛЬШОЕ ТЕБЕ !!! Ты самая лучшая 🥰🥰🥰🥰🥰
+
+
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-46.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">З</span>
+                  </div>
+                  <h3 class="review-card__name">Зазнаевы</h3>
+                </div>
+                <p>
+                  Ксюша, спасибо огромное за наш прекрасный вечер! Всё было просто космически круто. Бешеные белки, Бешеные тигры и Стрела Иваныча в восторге от настроения, которым ты заряжаешь. Гости не скучали, танцевали и веселились вместе с нами в этот день!
+Мы счастливы, что выбрали именно тебя для нашего волшебного дня!
+
+
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-47.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">ИЕ</span>
+                  </div>
+                  <h3 class="review-card__name">Иван и Екатерина Исаевы</h3>
+                </div>
+                <p>
+                  Дорогие коллеги, выражаем вам благодарность за проведение нашего первого семейного торжества! Всё было идеально, так, как мечталось и так, как хотелось 😊 всё по таймингу, под контролем! Максимальная вовлеченность гостей!
+Спасибо за отсутствие Сердючки, Михайлова 💜 Мы в восторге! Всё четко, молодежно и динамично! Шоу портретов – круто!
+Семья Исаевых Иван и Екатерина
+04.08.2018
+
+
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-48.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">АЕ</span>
+                  </div>
+                  <h3 class="review-card__name">Андрей и Лена Смирновы</h3>
+                </div>
+                <p>
+                  Ксюша, спасибки огромное за проведение нашей свадьбы 😍😍😍😍😍😍😍
+Всё прошло отлично (ты по-другому просто не умеешь!). Мы и гости в восторге от нашей свадьбы! Всем очень понравилось. Спасибо большое Виталию за музыкальное сопровождение. Огромное Вам спасибо, желаем Вам дальнейшего процветания и пусть ещё миллионы счастливых свадеб пройдут с участием настоящих профессионалов своего дела 💕💕💕
+
+
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-49.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">АЕ</span>
+                  </div>
+                  <h3 class="review-card__name">Артем и Екатерина</h3>
+                </div>
+                <p>
+                  Наша Ксюша.. спасибо огромное 😊
+Ты не просто ведущая свадьбы.. ты гость, умеющий задавать настроение свадьбе 🙏
+Ты шикарный профессионал своего дела 😉
+Гости просто в восторге от тебя. Никто не скучал ни одной минутки, начиная от друзей и заканчивая бабушкой 70 лет 😍
+С тобой молодожены на свадьбе отдыхают и не напрягаются, потому что ты решаешь все сложности 😌
+Спасибо огромное, мы в восторге от нашего праздника ❤️
+
+
+                </p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div class="review-card__avatar" aria-hidden="true">
+                    <img src="assets/review-50.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <span class="review-card__initials">АЕ</span>
+                  </div>
+                  <h3 class="review-card__name">Семья Губернаторовых</h3>
+                </div>
+                <p>
+                  Дорогая Ксюша 😘 спасибо тебе  огромное за нашу свадьбу которая состоялась 23.06. 18, все было  МЕГА КРУТО. Мы чувствовали себя настоящими женихом и невестой. Эмоции нас переполняли. Весь праздник пролетел на одном дыхании. Все гости были просто в восторге и благодарили за такое веселье, лучше тебя никого нет, ты настоящая зажигалочка😘😘😘 . Спасибо тебе за все,  спасибо огромное Виталию за крутую музыку 👍👍👍 мы несколечко не пожалели, что выбрали тебя. ТЫ МАСТЕР СВОЕГО ДЕЛА. 😘😘😘Всем смело советуем выбирать только Ксению Лазареву
 
                 </p>
               </article>
@@ -1017,15 +1533,12 @@
       <footer id="contacts" class="footer">
         <div class="container footer__center" data-animate>
           <h2 class="footer__title">Познакомимся?</h2>
-          <a class="btn btn--primary footer__phone" href="tel:+79271152333">
+          <a class="btn btn--primary footer__phone" href="tel:+79278356376">
             <img class="footer__phone-ico" src="assets/icon-phone.svg" alt="" aria-hidden="true" />
-            +7 (927) 115-23-33
+            +7 (927) 835-63-76
           </a>
           <div class="footer__social">
-            <a class="icon-link" href="https://t.me/SaiRaks11" target="_blank" rel="noreferrer" aria-label="Telegram">
-              <img src="assets/icon-telegram.svg" alt="" />
-            </a>
-            <a class="icon-link" href="https://vk.com/valeev_73" target="_blank" rel="noreferrer" aria-label="VK">
+            <a class="icon-link" href="https://vk.com/ksu173" target="_blank" rel="noreferrer" aria-label="VK">
               <img src="assets/icon-vk.svg" alt="" />
             </a>
           </div>
@@ -1042,6 +1555,22 @@
       <div class="modal__panel" role="dialog" aria-modal="true" aria-label="Видео">
         <button class="modal__close" type="button" data-modal-close aria-label="Закрыть">×</button>
         <div class="modal__content" data-modal-content></div>
+      </div>
+    </div>
+
+    <div class="modal modal--review" data-review-modal aria-hidden="true">
+      <div class="modal__backdrop" data-review-close></div>
+      <div class="modal__panel modal__panel--review" role="dialog" aria-modal="true" aria-label="Отзыв">
+        <button class="modal__close" type="button" data-review-close aria-label="Закрыть">×</button>
+        <div class="review-modal">
+          <div class="review-modal__head">
+            <div class="review-modal__avatar" aria-hidden="true" data-review-modal-avatar></div>
+            <div class="review-modal__meta">
+              <div class="review-modal__name" data-review-modal-name></div>
+            </div>
+          </div>
+          <div class="review-modal__text" data-review-modal-text></div>
+        </div>
       </div>
     </div>
 

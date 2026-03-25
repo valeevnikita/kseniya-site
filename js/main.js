@@ -42,6 +42,16 @@ function initSplash() {
 
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  const showTextWhenFontsReady = () => {
+    const mark = () => splash.classList.add("is-fonts-ready");
+    // If Font Loading API is supported, wait for all fonts to be ready to avoid style "jump"
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(mark).catch(mark);
+    } else {
+      mark();
+    }
+  };
+
   const hide = () => {
     splash.classList.add("is-hidden");
     setTimeout(() => splash.remove(), 900);
@@ -52,10 +62,7 @@ function initSplash() {
     return;
   }
 
-  requestAnimationFrame(() => {
-    splash.classList.add("is-shown");
-  });
-
+  showTextWhenFontsReady();
   splash.addEventListener("click", hide);
   setTimeout(hide, 2000);
 }
@@ -188,6 +195,30 @@ function initModal() {
   });
 }
 
+function initVideoCats() {
+  const root = $("[data-video-cats]");
+  if (!root) return;
+
+  const buttons = $$("[data-video-cat]", root);
+  const panels = $$("[data-video-panel]");
+  if (!buttons.length || !panels.length) return;
+
+  const setActive = (id) => {
+    buttons.forEach((b) => b.classList.toggle("is-active", b.getAttribute("data-video-cat") === id));
+    panels.forEach((p) => {
+      p.hidden = p.getAttribute("data-video-panel") !== id;
+    });
+  };
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const id = btn.getAttribute("data-video-cat");
+      if (!id) return;
+      setActive(id);
+    });
+  });
+}
+
 function initGallery() {
   const root = $("[data-gallery]");
   const btn = $("[data-gallery-more]");
@@ -220,6 +251,83 @@ function initReviewsSlider() {
     e.preventDefault();
     step(1);
   });
+}
+
+function initReviewModal() {
+  const modal = $("[data-review-modal]");
+  const closers = $$("[data-review-close]");
+  const avatar = $("[data-review-modal-avatar]");
+  const name = $("[data-review-modal-name]");
+  const text = $("[data-review-modal-text]");
+  if (!modal || !avatar || !name || !text) return;
+
+  const cards = $$(".review-card");
+  if (!cards.length) return;
+
+  const setOpen = (open) => {
+    modal.setAttribute("aria-hidden", open ? "false" : "true");
+    document.documentElement.style.overflow = open ? "hidden" : "";
+  };
+
+  const getInitials = (fullName) =>
+    String(fullName || "")
+      .trim()
+      .split(/\s+/)
+      .slice(0, 2)
+      .map((w) => w[0] || "")
+      .join("")
+      .toUpperCase();
+
+  const computeExpandable = () => {
+    cards.forEach((card) => {
+      const p = $("p", card);
+      if (!p) return;
+      const expandable = p.scrollHeight - p.clientHeight > 6;
+      card.classList.toggle("is-expandable", expandable);
+    });
+  };
+
+  const openFrom = (card) => {
+    const title = $(".review-card__name", card)?.textContent?.trim() || "Отзыв";
+    const p = $("p", card);
+    const fullText = p ? p.innerText.trim() : "";
+
+    name.textContent = title;
+    text.textContent = fullText;
+
+    const img = $("img", $(".review-card__avatar", card));
+    if (img && img.getAttribute("src") && img.style.display !== "none") {
+      avatar.innerHTML = `<img src="${img.getAttribute("src")}" alt="" />`;
+    } else {
+      avatar.textContent = getInitials(title);
+    }
+
+    setOpen(true);
+  };
+
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      if (!card.classList.contains("is-expandable")) return;
+      openFrom(card);
+    });
+  });
+
+  closers.forEach((c) =>
+    c.addEventListener("click", (e) => {
+      e.preventDefault();
+      setOpen(false);
+    })
+  );
+
+  document.addEventListener("keydown", (e) => {
+    if (modal.getAttribute("aria-hidden") !== "false") return;
+    if (e.key === "Escape") setOpen(false);
+  });
+
+  const schedule = () => requestAnimationFrame(() => computeExpandable());
+  window.addEventListener("resize", schedule);
+  window.addEventListener("load", schedule);
+  schedule();
 }
 
 function initLightbox() {
@@ -370,16 +478,16 @@ function initQuiz() {
     if (method === "VK") {
       try {
         await navigator.clipboard.writeText(text);
-        window.open("https://vk.com/valeev_73", "_blank", "noreferrer");
+        window.open("https://vk.com/ksu173", "_blank", "noreferrer");
         return { ok: true, note: "Текст скопирован. Открыл VK — вставьте сообщение в диалог." };
       } catch {
-        window.open("https://vk.com/valeev_73", "_blank", "noreferrer");
+        window.open("https://vk.com/ksu173", "_blank", "noreferrer");
         return { ok: true, note: "Открыл VK. Скопируйте текст ниже и отправьте сообщением." };
       }
     }
 
     if (method === "Звонок") {
-      window.location.href = "tel:+79271152333";
+      window.location.href = "tel:+79278356376";
       return { ok: true, note: "Открываю звонок." };
     }
 
@@ -576,8 +684,10 @@ initScrollReveal();
 initMixerImageFallback();
 initParrotFallback();
 initModal();
+initVideoCats();
 initGallery();
 initReviewsSlider();
+initReviewModal();
 initLightbox();
 initFaq();
 initQuiz();
