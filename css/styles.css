@@ -624,6 +624,47 @@ button {
   -webkit-overflow-scrolling: touch;
 }
 
+.video-rail-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rail-nav {
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 230, 0, 0.28);
+  background: rgba(255, 230, 0, 0.92);
+  color: #0a0a0a;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s var(--ease), filter 0.2s var(--ease), opacity 0.2s var(--ease);
+  flex: 0 0 auto;
+}
+
+.rail-nav:hover {
+  transform: translateY(-1px) scale(1.02);
+  filter: brightness(1.02);
+}
+
+.rail-nav:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.rail-nav:disabled {
+  opacity: 0.35;
+  cursor: default;
+  transform: none;
+}
+
+.video-rail {
+  flex: 1;
+}
+
 .video-rail::-webkit-scrollbar {
   height: 0;
 }
@@ -631,6 +672,18 @@ button {
 .video-rail .video-card {
   flex: 0 0 clamp(280px, 44vw, 360px);
   scroll-snap-align: start;
+}
+
+@media (max-width: 720px) {
+  .rail-nav {
+    width: 44px;
+    height: 44px;
+    font-size: 26px;
+  }
+
+  .video-rail-wrap {
+    gap: 10px;
+  }
 }
 
 .video-card {
