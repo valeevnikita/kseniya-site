@@ -3,8 +3,3 @@ events/
 Thumbs.db
 *.log
 .DS_Store
-
-# Large media should not be pushed to GitHub (size limits / slow deploys)
-assets/*.mp4
-assets/*.mov
-assets/*.mkv
