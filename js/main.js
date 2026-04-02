@@ -222,6 +222,66 @@ function initVideoCats() {
   });
 }
 
+function initGalleryCats() {
+  const root = $("[data-gallery-cats]");
+  if (!root) return;
+
+  const section = root.closest("section") || document;
+  const buttons = $$("[data-gallery-cat]", root);
+  const panels = $$("[data-gallery-panel]", section);
+  if (!buttons.length || !panels.length) return;
+
+  const setActive = (id) => {
+    buttons.forEach((b) => b.classList.toggle("is-active", b.getAttribute("data-gallery-cat") === id));
+    panels.forEach((p) => {
+      const active = p.getAttribute("data-gallery-panel") === id;
+      p.hidden = !active;
+      if (active) {
+        // Reset "More photos" state on tab switch for predictable UX
+        const gallery = $("[data-gallery]", p);
+        const btn = $("[data-gallery-more]", p);
+        if (gallery) gallery.classList.remove("is-open");
+        if (btn) btn.textContent = "Больше фото";
+      }
+    });
+  };
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const id = btn.getAttribute("data-gallery-cat");
+      if (!id) return;
+      setActive(id);
+    });
+  });
+}
+
+function initReviewsCats() {
+  const root = $("[data-reviews-cats]");
+  if (!root) return;
+
+  const section = root.closest("section") || document;
+  const buttons = $$("[data-reviews-cat]", root);
+  const panels = $$("[data-reviews-panel]", section);
+  if (!buttons.length || !panels.length) return;
+
+  const setActive = (id) => {
+    buttons.forEach((b) => b.classList.toggle("is-active", b.getAttribute("data-reviews-cat") === id));
+    panels.forEach((p) => {
+      p.hidden = p.getAttribute("data-reviews-panel") !== id;
+    });
+    // Let other logic (slider buttons) update for active panel
+    root.dispatchEvent(new CustomEvent("tabs:changed", { detail: { id } }));
+  };
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const id = btn.getAttribute("data-reviews-cat");
+      if (!id) return;
+      setActive(id);
+    });
+  });
+}
+
 function initVideoRails() {
   $$("[data-video-rail-wrap]").forEach((wrap) => {
     const rail = $("[data-video-rail]", wrap);
@@ -267,37 +327,105 @@ function initVideoRails() {
 }
 
 function initGallery() {
-  const root = $("[data-gallery]");
-  const btn = $("[data-gallery-more]");
-  if (!root || !btn) return;
-  btn.addEventListener("click", () => {
-    const open = root.classList.toggle("is-open");
-    btn.textContent = open ? "Свернуть" : "Больше фото";
+  $$("[data-gallery]").forEach((root) => {
+    const btn = $("[data-gallery-more]", root);
+    if (!btn) return;
+    btn.addEventListener("click", () => {
+      const wasOpen = root.classList.contains("is-open");
+      const yBefore = btn.getBoundingClientRect().top;
+
+      const open = root.classList.toggle("is-open");
+      btn.textContent = open ? "Свернуть" : "Больше фото";
+
+      // When collapsing, page height changes резко and browser can "jump" вниз.
+      // Keep the button in the same visual place in the viewport.
+      if (wasOpen) {
+        requestAnimationFrame(() => {
+          const yAfter = btn.getBoundingClientRect().top;
+          window.scrollBy({ top: yAfter - yBefore, left: 0, behavior: "auto" });
+        });
+      }
+    });
+  });
+}
+
+function initAutoGalleries() {
+  $$("[data-gallery-auto]").forEach((gallery) => {
+    const kind = gallery.getAttribute("data-gallery-auto");
+    const count = Number(gallery.getAttribute("data-gallery-count") || "0");
+    const ext = (gallery.getAttribute("data-gallery-ext") || "jpg").trim();
+    const grid = $(".gallery__grid", gallery);
+    if (!kind || !count || !grid) return;
+
+    // Prevent duplicate rendering if init runs more than once
+    grid.innerHTML = "";
+
+    const frag = document.createDocumentFragment();
+    for (let i = 1; i <= count; i++) {
+      const img = document.createElement("img");
+      img.loading = "lazy";
+      img.alt = "";
+      img.src = `assets/${kind}-${i}.${ext}`;
+      frag.appendChild(img);
+    }
+    grid.appendChild(frag);
   });
 }
 
 function initReviewsSlider() {
-  const slider = $("[data-reviews-slider]");
-  const track = $("[data-reviews-track]");
-  const prev = $("[data-reviews-prev]");
-  const next = $("[data-reviews-next]");
-  if (!slider || !track || !prev || !next) return;
+  const section = $("#reviews") || document;
+  const prev = $("[data-reviews-prev]", section);
+  const next = $("[data-reviews-next]", section);
+  if (!prev || !next) return;
 
-  const step = (dir) => {
+  const getActiveTrack = () => $("[data-reviews-panel]:not([hidden]) [data-reviews-track]", section) || $("[data-reviews-track]", section);
+
+  const getStep = (track) => {
     const card = $(".review-card", track);
     const cardWidth = card ? card.getBoundingClientRect().width : 520;
     const gap = 18;
-    track.scrollBy({ left: dir * (cardWidth + gap), behavior: "smooth" });
+    return cardWidth + gap;
+  };
+
+  const update = () => {
+    const track = getActiveTrack();
+    if (!track) return;
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+  };
+
+  const scroll = (dir) => {
+    const track = getActiveTrack();
+    if (!track) return;
+    track.scrollBy({ left: dir * getStep(track), behavior: "smooth" });
+    setTimeout(update, 220);
   };
 
   prev.addEventListener("click", (e) => {
     e.preventDefault();
-    step(-1);
+    scroll(-1);
   });
   next.addEventListener("click", (e) => {
     e.preventDefault();
-    step(1);
+    scroll(1);
   });
+
+  // Update disabled states while user scrolls by touch/trackpad
+  document.addEventListener(
+    "scroll",
+    () => {
+      const track = getActiveTrack();
+      if (!track) return;
+      update();
+    },
+    { passive: true, capture: true }
+  );
+
+  const tabsRoot = $("[data-reviews-cats]", section);
+  if (tabsRoot) tabsRoot.addEventListener("tabs:changed", () => setTimeout(update, 0));
+
+  window.addEventListener("resize", () => update());
+  update();
 }
 
 function initReviewModal() {
@@ -383,13 +511,9 @@ function initLightbox() {
   const btnPrev = $("[data-lightbox-prev]");
   const btnNext = $("[data-lightbox-next]");
   const closers = $$("[data-lightbox-close]");
-  const galleryRoot = $("[data-gallery]");
-  if (!lightbox || !imgEl || !btnPrev || !btnNext || !galleryRoot) return;
+  if (!lightbox || !imgEl || !btnPrev || !btnNext) return;
 
-  const grid = $(".gallery__grid", galleryRoot);
-  const items = $$("img", grid || galleryRoot).filter((img) => img.getAttribute("src"));
-  if (!items.length) return;
-
+  let items = [];
   let index = 0;
   let lastActive = null;
 
@@ -401,13 +525,16 @@ function initLightbox() {
   };
 
   const render = () => {
+    if (!items.length) return;
     const src = items[index].getAttribute("src");
     imgEl.src = src;
     imgEl.alt = items[index].getAttribute("alt") || "";
   };
 
-  const openAt = (i, fromEl) => {
+  const openAt = (i, fromEl, newItems) => {
     lastActive = fromEl || document.activeElement;
+    if (Array.isArray(newItems) && newItems.length) items = newItems;
+    if (!items.length) return;
     index = ((i % items.length) + items.length) % items.length;
     render();
     setOpen(true);
@@ -416,11 +543,17 @@ function initLightbox() {
   const prev = () => openAt(index - 1);
   const next = () => openAt(index + 1);
 
-  items.forEach((img, i) => {
-    img.addEventListener("click", (e) => {
-      e.preventDefault();
-      openAt(i, img);
-    });
+  document.addEventListener("click", (e) => {
+    const img = e.target instanceof HTMLElement ? e.target.closest("[data-gallery] img") : null;
+    if (!img) return;
+    const gallery = img.closest("[data-gallery]");
+    if (!gallery) return;
+    const grid = $(".gallery__grid", gallery) || gallery;
+    const imgs = $$("img", grid).filter((i) => i.getAttribute("src"));
+    const i = imgs.indexOf(img);
+    if (i < 0) return;
+    e.preventDefault();
+    openAt(i, img, imgs);
   });
 
   btnPrev.addEventListener("click", (e) => {
@@ -727,8 +860,11 @@ initParrotFallback();
 initModal();
 initVideoCats();
 initVideoRails();
+initGalleryCats();
+initAutoGalleries();
 initGallery();
 initReviewsSlider();
+initReviewsCats();
 initReviewModal();
 initLightbox();
 initFaq();

@@ -583,7 +583,8 @@ button {
 }
 
 /* Video categories + horizontal slider */
-.video-cats {
+.video-cats,
+.cats {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
