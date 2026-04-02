@@ -496,6 +496,13 @@ function initReviewModal() {
       if (!p) return;
       const expandable = p.scrollHeight - p.clientHeight > 6;
       card.classList.toggle("is-expandable", expandable);
+
+      // Fill initials automatically when no avatar image (or when image fails to load)
+      const title = $(".review-card__name", card)?.textContent?.trim() || "";
+      const initialsEl = $(".review-card__initials", card);
+      if (initialsEl && !String(initialsEl.textContent || "").trim()) {
+        initialsEl.textContent = getInitials(title);
+      }
     });
   };
 
