@@ -185,12 +185,14 @@ function initModal() {
 
     setOpen(true);
 
-    if (isYouTube || isVimeo) {
+    const isLikelyEmbed = /^https?:\/\//.test(src) && !/\.(mp4|webm|ogg)(\?.*)?$/.test(src);
+
+    if (isYouTube || isVimeo || isLikelyEmbed) {
       const iframe = document.createElement("iframe");
       iframe.allow =
         "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
       iframe.allowFullscreen = true;
-      iframe.src = isYouTube ? toYouTubeEmbed(src) : toVimeoEmbed(src);
+      iframe.src = isYouTube ? toYouTubeEmbed(src) : isVimeo ? toVimeoEmbed(src) : src;
       content.appendChild(iframe);
       iframe.addEventListener("error", () => {
         content.innerHTML = `
