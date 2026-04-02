@@ -156,6 +156,33 @@ function initModal() {
     const isYouTube = /youtube\.com|youtu\.be/.test(src);
     const isVimeo = /vimeo\.com/.test(src);
 
+    const toYouTubeEmbed = (url) => {
+      try {
+        const u = new URL(url, window.location.href);
+        if (/youtu\.be$/.test(u.hostname)) {
+          const id = u.pathname.replace(/^\/+/, "").split("/")[0];
+          return id ? `https://www.youtube.com/embed/${id}?autoplay=1` : url;
+        }
+        if (/youtube\.com$/.test(u.hostname) || /youtube-nocookie\.com$/.test(u.hostname)) {
+          if (u.pathname.includes("/embed/")) return url;
+          const id = u.searchParams.get("v");
+          return id ? `https://www.youtube.com/embed/${id}?autoplay=1` : url;
+        }
+      } catch {}
+      return url;
+    };
+
+    const toVimeoEmbed = (url) => {
+      try {
+        const u = new URL(url, window.location.href);
+        if (!/vimeo\.com$/.test(u.hostname)) return url;
+        if (u.hostname === "player.vimeo.com") return url;
+        const id = u.pathname.replace(/^\/+/, "").split("/")[0];
+        return id ? `https://player.vimeo.com/video/${id}?autoplay=1` : url;
+      } catch {}
+      return url;
+    };
+
     setOpen(true);
 
     if (isYouTube || isVimeo) {
@@ -163,8 +190,16 @@ function initModal() {
       iframe.allow =
         "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
       iframe.allowFullscreen = true;
-      iframe.src = src;
+      iframe.src = isYouTube ? toYouTubeEmbed(src) : toVimeoEmbed(src);
       content.appendChild(iframe);
+      iframe.addEventListener("error", () => {
+        content.innerHTML = `
+          <div class="video-fallback">
+            <p><strong>Не получилось встроить видео.</strong></p>
+            <p class="muted">Откройте по ссылке: <a href="${src}" target="_blank" rel="noopener noreferrer">${src}</a></p>
+          </div>
+        `;
+      });
     } else {
       const video = document.createElement("video");
       video.controls = true;
@@ -174,8 +209,8 @@ function initModal() {
       video.addEventListener("error", () => {
         content.innerHTML = `
           <div class="video-fallback">
-            <p><strong>Видео пока не добавлено.</strong></p>
-            <p class="muted">Замените значение <code>data-video</code> у карточки на ссылку YouTube/Vimeo или на путь к вашему файлу.</p>
+            <p><strong>Видео пока не добавлено на сайт.</strong></p>
+            <p class="muted">Если видео слишком большое для GitHub, загрузите его на YouTube/Vimeo/VK и укажите ссылку в <code>data-video</code>.</p>
           </div>
         `;
       });
