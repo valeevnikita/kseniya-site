@@ -788,6 +788,8 @@ button {
 }
 
 .frame {
+  width: min(480px, 100%);
+  aspect-ratio: 4 / 5;
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius-lg);
@@ -800,7 +802,9 @@ button {
   display: block;
   border-radius: inherit;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
 }
 
 .bullets {
