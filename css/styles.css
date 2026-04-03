@@ -13,7 +13,7 @@
   --sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --ease: cubic-bezier(0.2, 0.9, 0.2, 1);
   /* Hero photo tuning */
-  --hero-photo-scale: 1.08;
+  --hero-photo-scale: 1.0;
   --hero-photo-x: 50%;
   --hero-photo-y: 28%;
   color-scheme: dark;
