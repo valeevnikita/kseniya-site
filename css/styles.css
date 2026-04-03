@@ -12,6 +12,10 @@
   --serif: "Cormorant Garamond", Georgia, serif;
   --sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --ease: cubic-bezier(0.2, 0.9, 0.2, 1);
+  /* Hero photo tuning */
+  --hero-photo-scale: 1.08;
+  --hero-photo-x: 50%;
+  --hero-photo-y: 28%;
   color-scheme: dark;
 }
 
@@ -571,8 +575,8 @@ button {
   display: block;
   border-radius: inherit;
   object-fit: cover;
-  object-position: 50% 45%;
-  transform: scale(1.20);
+  object-position: var(--hero-photo-x) var(--hero-photo-y);
+  transform: scale(var(--hero-photo-scale));
   transform-origin: center;
   will-change: transform;
 }
