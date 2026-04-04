@@ -882,6 +882,52 @@ function initCalcFab() {
   });
 }
 
+function initQuizGiftPreviews() {
+  const root = $("[data-quiz]");
+  if (!root) return;
+
+  const items = $$("[data-quiz-step=\"0\"] .choice", root);
+  if (!items.length) return;
+
+  const warmup = (btn) => {
+    const video = $(".choice__preview", btn);
+    if (!video) return;
+    const src = video.getAttribute("data-src");
+    if (!src) return;
+    if (!video.getAttribute("src")) video.src = src;
+  };
+
+  const play = (btn) => {
+    const video = $(".choice__preview", btn);
+    if (!video) return;
+    warmup(btn);
+    btn.classList.add("is-preview-playing");
+    video.play().catch(() => {});
+  };
+
+  const stop = (btn) => {
+    const video = $(".choice__preview", btn);
+    if (!video) return;
+    btn.classList.remove("is-preview-playing");
+    try {
+      video.pause();
+      video.currentTime = 0;
+    } catch {}
+  };
+
+  items.forEach((btn) => {
+    const video = $(".choice__preview", btn);
+    if (video) {
+      video.addEventListener("error", () => stop(btn));
+    }
+
+    btn.addEventListener("pointerenter", () => play(btn), { passive: true });
+    btn.addEventListener("pointerleave", () => stop(btn), { passive: true });
+    btn.addEventListener("focusin", () => play(btn));
+    btn.addEventListener("focusout", () => stop(btn));
+  });
+}
+
 function initSelectedStyles() {
   const style = document.createElement("style");
   style.textContent = `
@@ -914,3 +960,4 @@ initLightbox();
 initFaq();
 initQuiz();
 initCalcFab();
+initQuizGiftPreviews();

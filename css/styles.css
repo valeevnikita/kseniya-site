@@ -836,6 +836,11 @@ button {
   flex-wrap: wrap;
 }
 
+.about__media .about__cta {
+  margin-top: 14px;
+  justify-content: center;
+}
+
 .floating {
   position: absolute;
   right: -10px;
@@ -1263,10 +1268,36 @@ button {
   gap: 10px;
 }
 
-.quiz__choices--cards .choice img {
+.quiz__choices--cards .choice__media {
+  position: relative;
   width: 100%;
   height: 170px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.quiz__choices--cards .choice__media img,
+.quiz__choices--cards .choice__media video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  display: block;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.quiz__choices--cards .choice__media video {
+  opacity: 0;
+  transition: opacity 0.2s var(--ease);
+}
+
+.quiz__choices--cards .choice.is-preview-playing .choice__media video {
+  opacity: 1;
 }
 
 .quiz__choices--cards .choice strong {

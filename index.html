@@ -301,28 +301,33 @@
             <div class="frame">
               <img src="assets/about-placeholder.jpg" alt="Фото ведущей (замените на свою)" loading="lazy" />
             </div>
+            <div class="about__cta">
+              <a class="btn btn--primary" href="#pricing">Смотреть пакеты</a>
+              <a class="btn btn--ghost" href="#contacts">Связаться</a>
+            </div>
           </div>
 
           <div class="about__copy" data-animate>
             <h2 class="h1">Приятно познакомиться!</h2>
             <p class="lead">
-              С юмором и любовью я из каждого мероприятия делаю <strong>СОБЫТИЕ ВЕКА</strong>.
+              Познакомимся? Меня зовут Ксения и я 15 лет  самая сногсшибательная  ведущая мероприятий. За плечами 1500 мероприятий разного формата.
             </p>
             <p class="lead">
-              Ярко, незабываемо и достойно! Чтобы каждый гость вспоминал этот день как один из лучших.
+              Превращаю обычные мероприятия в настоящие фестивали эмоций и впечатлений! Каждое событие — это уникальная история, наполненная яркими моментами: от трепетной выездной регистрации до головокружительных «вау‑эффектов», которые останутся в памяти гостей навсегда.
+            </p>
+            <p class="lead">
+              Что вы получаете, работая со мной:
             </p>
 
+
             <ul class="bullets">
-              <li>Персонализированный сценарий и интерактивы для гостей разного возраста.</li>
-              <li>Монтаж эксклюзивных роликов и «вау»-моментов, которые заходят всем.</li>
-              <li>Выездная регистрация: лирика, романтика и продуманные детали.</li>
-              <li>Подберу подрядчиков по адекватным ценам: фото/видео/декор/шоу.</li>
+              <li>Уникальный сценарий под ключ — создаю живые, динамичные программы с интерактивами, играми и активностями для гостей любого возраста. Никаких шаблонов: каждый сценарий пишется индивидуально под вашу идею и аудиторию.</li>
+              <li>Эксклюзивные видеоролики и визуальные эффекты — профессионально снимаю и монтирую контент, который захочется пересматривать снова и снова. Создаю запоминающиеся «вау‑моменты»: от трогательных сюрпризов до эффектных флешмобов и световых шоу.</li>
+              <li>Выездную регистрацию мечты — выстраиваю атмосферу романтики и лирики: нежные детали, на основе Вашей истории, продуманный тайминг, музыкальное сопровождение и трогательные ритуалы с элементами юмора. Делаю так, чтобы этот момент стал самым волшебным днём в вашей жизни.</li>
+              <li>Подберу и организую  подрядчиков—  лучших специалистов: фотографов, видеографов, декораторов и артистов. Любое шоу на Ваш вкус. Гарантирую качество без переплат: нахожу проверенных подрядчиков с адекватными ценами и контролирую выполнение задач на всех этапах.</li>
+              <li>Спокойствие и комфорт для вас — снимаю с вас все организационные заботы. Вы наслаждаетесь праздником, а я слежу за тем, чтобы всё шло по плану — даже если возникают неожиданные ситуации.</li>
             </ul>
 
-            <div class="about__cta">
-              <a class="btn btn--primary" href="#pricing">Смотреть пакеты</a>
-              <a class="btn btn--ghost" href="#contacts">Связаться</a>
-            </div>
           </div>
         </div>
       </section>
@@ -585,21 +590,30 @@
                   <div class="quiz__a">
                     <div class="quiz__choices quiz__choices--cards">
                       <button class="choice" type="button" data-choice="Подарок: видеоролик">
-                        <img src="assets/gift-1.svg" alt="" />
+                        <div class="choice__media" aria-hidden="true">
+                          <img class="choice__cover" src="assets/quiz-gift-1.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='assets/video-placeholder.svg';" />
+                          <video class="choice__preview" muted playsinline loop preload="none" poster="assets/quiz-gift-1.jpg" data-src="assets/quiz-gift-1.mp4"></video>
+                        </div>
                         <div>
                           <strong>Видеоролик история счастья</strong>
                           <span>Видео из Ваших фотографий  счастливых и трогательных моментов</span>
                         </div>
                       </button>
                       <button class="choice" type="button" data-choice="Подарок: сценичный ролик">
-                        <img src="assets/gift-2.svg" alt="" />
+                        <div class="choice__media" aria-hidden="true">
+                          <img class="choice__cover" src="assets/quiz-gift-2.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='assets/video-placeholder.svg';" />
+                          <video class="choice__preview" muted playsinline loop preload="none" poster="assets/quiz-gift-2.jpg" data-src="assets/quiz-gift-2.mp4"></video>
+                        </div>
                         <div>
                           <strong>Смешной ролик с гостями.</strong>
                           <span>Безудержный смех гарантирован!</span>
                         </div>
                       </button>
                       <button class="choice choice--upper" type="button" data-choice="Подарок: не нужен">
-                        <img src="assets/gift-3.svg" alt="" />
+                        <div class="choice__media" aria-hidden="true">
+                          <img class="choice__cover" src="assets/quiz-gift-3.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='assets/video-placeholder.svg';" />
+                          <video class="choice__preview" muted playsinline loop preload="none" poster="assets/quiz-gift-3.jpg" data-src="assets/quiz-gift-3.mp4"></video>
+                        </div>
                         <div>
                           <strong>ПОДАРОК НЕ НУЖЕН</strong>
                           <span>Подарок не нужен</span>
