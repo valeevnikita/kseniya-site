@@ -1292,12 +1292,7 @@ button {
 }
 
 .quiz__choices--cards .choice__media video {
-  opacity: 0;
-  transition: opacity 0.2s var(--ease);
-}
-
-.quiz__choices--cards .choice.is-preview-playing .choice__media video {
-  opacity: 1;
+  display: none;
 }
 
 .quiz__choices--cards .choice strong {

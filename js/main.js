@@ -220,6 +220,9 @@ function initModal() {
     }
   };
 
+  // Expose for other blocks (e.g. quiz previews)
+  window.__openVideoModal = openVideo;
+
   $$("[data-video]").forEach((card) => {
     const src = card.getAttribute("data-video");
     const play = $(".video-card__play", card);
@@ -897,34 +900,33 @@ function initQuizGiftPreviews() {
     if (!video.getAttribute("src")) video.src = src;
   };
 
-  const play = (btn) => {
-    const video = $(".choice__preview", btn);
-    if (!video) return;
-    warmup(btn);
-    btn.classList.add("is-preview-playing");
-    video.play().catch(() => {});
-  };
-
-  const stop = (btn) => {
-    const video = $(".choice__preview", btn);
-    if (!video) return;
-    btn.classList.remove("is-preview-playing");
-    try {
-      video.pause();
-      video.currentTime = 0;
-    } catch {}
-  };
-
   items.forEach((btn) => {
     const video = $(".choice__preview", btn);
+    const media = $(".choice__media", btn);
     if (video) {
-      video.addEventListener("error", () => stop(btn));
+      video.addEventListener("error", () => {
+        btn.classList.remove("is-preview-playing");
+      });
     }
 
-    btn.addEventListener("pointerenter", () => play(btn), { passive: true });
-    btn.addEventListener("pointerleave", () => stop(btn), { passive: true });
-    btn.addEventListener("focusin", () => play(btn));
-    btn.addEventListener("focusout", () => stop(btn));
+    if (media) {
+      const open = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        warmup(btn);
+        const src = video?.getAttribute("data-src") || video?.getAttribute("src") || "";
+        if (!src) return;
+        if (typeof window.__openVideoModal === "function") window.__openVideoModal(src);
+      };
+
+      media.addEventListener("click", open);
+      media.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") open(e);
+      });
+      media.setAttribute("tabindex", "0");
+      media.setAttribute("role", "button");
+      media.setAttribute("aria-label", "Открыть видео");
+    }
   });
 }
 
