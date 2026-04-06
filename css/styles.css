@@ -1,14 +1,14 @@
 :root {
-  --bg: #0A192F;
+  --bg: #000;
   --text: rgba(255, 255, 255, 0.92);
   --muted: rgba(255, 255, 255, 0.62);
   --line: rgba(255, 255, 255, 0.12);
   --line-strong: rgba(255, 255, 255, 0.22);
   --panel: rgba(255, 255, 255, 0.06);
   --panel-2: rgba(255, 255, 255, 0.10);
-  --yellow: #FFBF00;
-  --yellow-2: #FFD45A;
-  --accent-rgb: 255, 191, 0;
+  --yellow: #FFD700;
+  --yellow-2: #FFE266;
+  --accent-rgb: 255, 215, 0;
   --shadow: 0 22px 60px rgba(0, 0, 0, 0.55);
   --radius: 22px;
   --radius-lg: 34px;
@@ -227,7 +227,7 @@ button {
   right: 0;
   z-index: 50;
   backdrop-filter: blur(10px);
-  background: rgba(10, 25, 47, 0.72);
+  background: rgba(0, 0, 0, 0.78);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
