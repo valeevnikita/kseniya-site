@@ -1,11 +1,11 @@
 :root {
-  --bg: #050505;
+  --bg: #121212;
   --panel: rgba(255, 255, 255, 0.06);
   --text: rgba(255, 255, 255, 0.92);
   --muted: rgba(255, 255, 255, 0.62);
   --line: rgba(255, 255, 255, 0.12);
-  --yellow: #ffe600;
-  --yellow-2: #ffe939;
+  --yellow: #e5a811;
+  --yellow-2: #f1bf3b;
   --shadow: 0 22px 60px rgba(0, 0, 0, 0.55);
   --radius: 22px;
   --radius-lg: 34px;
@@ -31,7 +31,7 @@ html {
 
 body {
   margin: 0;
-  background: radial-gradient(1200px 900px at 50% -10%, rgba(255, 230, 0, 0.08), transparent 55%),
+  background: radial-gradient(1200px 900px at 50% -10%, rgba(229, 168, 17, 0.08), transparent 55%),
     radial-gradient(900px 700px at 10% 20%, rgba(255, 255, 255, 0.05), transparent 60%),
     radial-gradient(900px 700px at 90% 40%, rgba(255, 255, 255, 0.04), transparent 60%),
     var(--bg);
@@ -180,12 +180,12 @@ button {
 .btn--primary {
   background: var(--yellow);
   color: #0f0f0f;
-  box-shadow: 0 16px 34px rgba(255, 230, 0, 0.18);
+  box-shadow: 0 16px 34px rgba(229, 168, 17, 0.18);
 }
 
 .btn--primary:hover {
   background: var(--yellow-2);
-  box-shadow: 0 18px 44px rgba(255, 230, 0, 0.24);
+  box-shadow: 0 18px 44px rgba(229, 168, 17, 0.24);
   transform: translateY(-1px);
 }
 
@@ -551,7 +551,7 @@ button {
   border-radius: 999px;
   background: radial-gradient(circle at 30% 30%, #fff3a8, var(--yellow));
   filter: saturate(1.05);
-  box-shadow: 0 40px 100px rgba(255, 230, 0, 0.12);
+  box-shadow: 0 40px 100px rgba(229, 168, 17, 0.12);
   transform: translateY(30px);
 }
 
@@ -614,8 +614,8 @@ button {
 }
 
 .chip.is-active {
-  background: rgba(255, 230, 0, 0.92);
-  border-color: rgba(255, 230, 0, 0.55);
+  background: rgba(229, 168, 17, 0.92);
+  border-color: rgba(229, 168, 17, 0.55);
   color: #0b0b0b;
 }
 
@@ -639,8 +639,8 @@ button {
   width: 52px;
   height: 52px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 230, 0, 0.28);
-  background: rgba(255, 230, 0, 0.92);
+  border: 1px solid rgba(229, 168, 17, 0.28);
+  background: rgba(229, 168, 17, 0.92);
   color: #0a0a0a;
   font-size: 30px;
   line-height: 1;
@@ -852,7 +852,7 @@ button {
   color: #0d0d0d;
   display: grid;
   place-items: center;
-  box-shadow: 0 26px 80px rgba(255, 230, 0, 0.2);
+  box-shadow: 0 26px 80px rgba(229, 168, 17, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.18);
   transform: translateZ(0);
   transition: transform 0.2s var(--ease);
@@ -955,7 +955,7 @@ button {
   width: 18px;
   height: 84px;
   border-radius: 10px;
-  background: linear-gradient(to top, #ff2121, #ff8b2f, #ffe600, #21d07a, #4b8dff, #a04bff);
+  background: linear-gradient(to top, #ff2121, #ff8b2f, #e5a811, #21d07a, #4b8dff, #a04bff);
   opacity: 0.9;
   transform-origin: bottom;
   animation: eq 1.15s var(--ease) infinite alternate;
@@ -1078,7 +1078,7 @@ button {
 
 .gallery__grid img:hover {
   transform: translateY(-2px) scale(1.01);
-  border-color: rgba(255, 230, 0, 0.25);
+  border-color: rgba(229, 168, 17, 0.25);
   box-shadow: 0 12px 34px rgba(0, 0, 0, 0.35);
 }
 
@@ -1161,7 +1161,7 @@ button {
 
 .lightbox__close:hover {
   transform: scale(1.04);
-  border-color: rgba(255, 230, 0, 0.25);
+  border-color: rgba(229, 168, 17, 0.25);
 }
 
 .lightbox__nav {
@@ -1182,7 +1182,7 @@ button {
 
 .lightbox__nav:hover {
   transform: translateY(-50%) scale(1.04);
-  border-color: rgba(255, 230, 0, 0.25);
+  border-color: rgba(229, 168, 17, 0.25);
 }
 
 .lightbox__nav--prev {
@@ -1250,7 +1250,7 @@ button {
 .quiz__bar {
   height: 100%;
   width: 20%;
-  background: linear-gradient(90deg, rgba(255, 230, 0, 0.9), rgba(255, 255, 255, 0.22));
+  background: linear-gradient(90deg, rgba(229, 168, 17, 0.9), rgba(255, 255, 255, 0.22));
   transition: width 0.25s var(--ease);
 }
 
@@ -1377,9 +1377,9 @@ button {
   width: 18px;
   height: 18px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 230, 0, 0.6);
+  border: 1px solid rgba(229, 168, 17, 0.6);
   background: rgba(0, 0, 0, 0.22);
-  box-shadow: 0 0 0 4px rgba(255, 230, 0, 0.08);
+  box-shadow: 0 0 0 4px rgba(229, 168, 17, 0.08);
   flex: 0 0 auto;
   position: relative;
 }
@@ -1389,7 +1389,7 @@ button {
   position: absolute;
   inset: 4px;
   border-radius: 999px;
-  background: rgba(255, 230, 0, 0.95);
+  background: rgba(229, 168, 17, 0.95);
 }
 
 .quiz__a--radios {
@@ -1443,8 +1443,8 @@ button {
 
 .field input:focus,
 .field textarea:focus {
-  border-color: rgba(255, 230, 0, 0.5);
-  box-shadow: 0 0 0 4px rgba(255, 230, 0, 0.12);
+  border-color: rgba(229, 168, 17, 0.5);
+  box-shadow: 0 0 0 4px rgba(229, 168, 17, 0.12);
 }
 
 .field input.is-error {
@@ -1577,8 +1577,8 @@ button {
 }
 
 .price--featured {
-  border-color: rgba(255, 230, 0, 0.35);
-  box-shadow: 0 18px 60px rgba(255, 230, 0, 0.09), 0 18px 60px rgba(0, 0, 0, 0.38);
+  border-color: rgba(229, 168, 17, 0.35);
+  box-shadow: 0 18px 60px rgba(229, 168, 17, 0.09), 0 18px 60px rgba(0, 0, 0, 0.38);
   transform: translateY(-6px);
 }
 
@@ -1589,8 +1589,8 @@ button {
   font-size: 12px;
   padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(255, 230, 0, 0.14);
-  border: 1px solid rgba(255, 230, 0, 0.28);
+  background: rgba(229, 168, 17, 0.14);
+  border: 1px solid rgba(229, 168, 17, 0.28);
   color: rgba(255, 255, 255, 0.88);
 }
 
@@ -1642,8 +1642,8 @@ button {
   width: 52px;
   height: 52px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 230, 0, 0.28);
-  background: rgba(255, 230, 0, 0.92);
+  border: 1px solid rgba(229, 168, 17, 0.28);
+  background: rgba(229, 168, 17, 0.92);
   color: #0a0a0a;
   font-size: 28px;
   line-height: 1;
@@ -1880,7 +1880,7 @@ button {
   position: absolute;
   width: 14px;
   height: 2px;
-  background: rgba(255, 230, 0, 0.95);
+  background: rgba(229, 168, 17, 0.95);
   border-radius: 999px;
 }
 
@@ -1929,7 +1929,7 @@ button {
 .faq-block .faq__item {
   border-radius: 0;
   border: none;
-  border-top: 2px solid rgba(255, 230, 0, 0.55);
+  border-top: 2px solid rgba(229, 168, 17, 0.55);
   background: transparent;
   padding: 22px 6px;
   grid-template-columns: 1fr auto;
@@ -1938,7 +1938,7 @@ button {
 
 .faq-block .faq__item:hover {
   background: rgba(255, 255, 255, 0.02);
-  border-color: rgba(255, 230, 0, 0.7);
+  border-color: rgba(229, 168, 17, 0.7);
 }
 
 .faq-block .faq__item > span:first-child {
@@ -1955,7 +1955,7 @@ button {
   position: absolute;
   left: 0;
   top: -1px;
-  color: rgba(255, 230, 0, 0.95);
+  color: rgba(229, 168, 17, 0.95);
   font-size: 20px;
   line-height: 1;
 }
@@ -1990,8 +1990,8 @@ button {
 }
 
 .faq-block .faq__item[aria-expanded="true"] .faq__icon {
-  background: rgba(255, 230, 0, 0.95);
-  border-color: rgba(255, 230, 0, 0.55);
+  background: rgba(229, 168, 17, 0.95);
+  border-color: rgba(229, 168, 17, 0.55);
 }
 
 .faq-block .faq__item[aria-expanded="true"] .faq__icon::before {
@@ -2047,7 +2047,7 @@ button {
 .footer {
   padding: 78px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 230, 0, 0.28);
+  border-bottom: 1px solid rgba(229, 168, 17, 0.28);
 }
 
 .footer__center {
@@ -2088,7 +2088,7 @@ button {
   color: #0d0d0d;
   display: grid;
   place-items: center;
-  box-shadow: 0 26px 80px rgba(255, 230, 0, 0.22);
+  box-shadow: 0 26px 80px rgba(229, 168, 17, 0.22);
   border: 1px solid rgba(0, 0, 0, 0.18);
   z-index: 60;
   transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
@@ -2100,7 +2100,7 @@ button {
   position: absolute;
   inset: -10px;
   border-radius: 999px;
-  border: 2px solid rgba(255, 230, 0, 0.35);
+  border: 2px solid rgba(229, 168, 17, 0.35);
   opacity: 0;
   transform: scale(0.88);
   animation: fab-wave 2.4s var(--ease) infinite;
@@ -2109,7 +2109,7 @@ button {
 
 .calc-fab::after {
   inset: -18px;
-  border-color: rgba(255, 230, 0, 0.22);
+  border-color: rgba(229, 168, 17, 0.22);
   animation-delay: 0.65s;
 }
 
@@ -2133,7 +2133,7 @@ button {
 
 .calc-fab:hover {
   transform: translateY(-2px);
-  box-shadow: 0 30px 90px rgba(255, 230, 0, 0.26);
+  box-shadow: 0 30px 90px rgba(229, 168, 17, 0.26);
 }
 
 .calc-fab__text {

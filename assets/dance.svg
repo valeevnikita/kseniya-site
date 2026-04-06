@@ -3,7 +3,7 @@
     <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0a84ff"/>
       <stop offset="0.45" stop-color="#34c759"/>
-      <stop offset="1" stop-color="#ffe600"/>
+      <stop offset="1" stop-color="#e5a811"/>
     </linearGradient>
     <filter id="s" x="-30%" y="-30%" width="160%" height="160%">
       <feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#000" flood-opacity="0.18"/>
@@ -22,4 +22,3 @@
     <circle cx="142" cy="52" r="6" fill="#0d0d0d" opacity="0.7"/>
   </g>
 </svg>
-

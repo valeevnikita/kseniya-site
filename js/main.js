@@ -934,8 +934,8 @@ function initSelectedStyles() {
   const style = document.createElement("style");
   style.textContent = `
     .choice.is-selected, .radio.is-selected {
-      border-color: rgba(255, 230, 0, 0.55) !important;
-      box-shadow: 0 0 0 4px rgba(255, 230, 0, 0.12);
+      border-color: rgba(229, 168, 17, 0.55) !important;
+      box-shadow: 0 0 0 4px rgba(229, 168, 17, 0.12);
       background: rgba(255, 255, 255, 0.05) !important;
     }
   `;
