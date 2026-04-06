@@ -5,14 +5,14 @@
       <stop offset="1" stop-color="#070707"/>
     </linearGradient>
     <radialGradient id="glow" cx="50%" cy="45%" r="60%">
-      <stop offset="0" stop-color="#e5a811" stop-opacity="0.18"/>
+      <stop offset="0" stop-color="#FFBF00" stop-opacity="0.18"/>
       <stop offset="1" stop-color="#000" stop-opacity="0"/>
     </radialGradient>
   </defs>
   <rect width="1200" height="800" rx="44" fill="url(#g)"/>
   <rect width="1200" height="800" rx="44" fill="url(#glow)"/>
   <g transform="translate(600 400)">
-    <circle r="120" fill="none" stroke="#e5a811" stroke-opacity="0.35" stroke-width="10"/>
-    <polygon points="-35,-55 75,0 -35,55" fill="#e5a811" fill-opacity="0.85"/>
+    <circle r="120" fill="none" stroke="#FFBF00" stroke-opacity="0.35" stroke-width="10"/>
+    <polygon points="-35,-55 75,0 -35,55" fill="#FFBF00" fill-opacity="0.85"/>
   </g>
 </svg>
