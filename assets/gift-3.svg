@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="320" height="240" viewBox="0 0 320 240">
-  <rect width="320" height="240" rx="22" fill="#121212"/>
+  <rect width="320" height="240" rx="22" fill="#000"/>
   <path d="M90 80 h140 a18 18 0 0 1 18 18 v44 a18 18 0 0 1-18 18 H90 a18 18 0 0 1-18-18 V98 a18 18 0 0 1 18-18 Z" fill="#ffffff" fill-opacity="0.10"/>
   <text x="160" y="132" text-anchor="middle" font-family="Inter, Arial" font-size="18" fill="#ffffff" fill-opacity="0.75">Без подарка</text>
   <text x="160" y="210" text-anchor="middle" font-family="Inter, Arial" font-size="18" fill="#ffffff" fill-opacity="0.75">Ок</text>
 </svg>
-
