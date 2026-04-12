@@ -626,15 +626,6 @@ function initLightbox() {
   });
 }
 
-function initFaq() {
-  $$(".faq__item").forEach((item) => {
-    item.addEventListener("click", () => {
-      const expanded = item.getAttribute("aria-expanded") === "true";
-      item.setAttribute("aria-expanded", expanded ? "false" : "true");
-    });
-  });
-}
-
 function initQuiz() {
   const form = $("[data-quiz]");
   if (!form) return;
@@ -857,6 +848,11 @@ function initQuiz() {
   quizApi = {
     goToStep,
     goToLastStep: () => goToStep(steps.length - 1),
+    focusFirstStep: () => {
+      goToStep(0);
+      const first = $("[data-quiz-step=\"0\"] button", form);
+      first?.focus?.();
+    },
     focusLastStep: () => {
       goToStep(steps.length - 1);
       const name = $("input[name=\"name\"]", form);
@@ -880,7 +876,7 @@ function initCalcFab() {
     const quiz = $("#quiz");
     if (quiz) quiz.scrollIntoView({ behavior: "smooth", block: "start" });
     setTimeout(() => {
-      quizApi?.focusLastStep?.();
+      quizApi?.focusFirstStep?.();
     }, 350);
   });
 }
@@ -959,7 +955,6 @@ initReviewsSlider();
 initReviewsCats();
 initReviewModal();
 initLightbox();
-initFaq();
 initQuiz();
 initCalcFab();
 initQuizGiftPreviews();
