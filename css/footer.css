@@ -1,0 +1,142 @@
+﻿/* Yellow */
+.yellow {
+  padding: 78px 0;
+  display: grid;
+  gap: 22px;
+}
+
+.yellow__title {
+  text-align: center;
+  font-size: clamp(40px, 6vw, 84px);
+  line-height: 0.93;
+  margin: 0;
+}
+
+.yellow__center {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  margin-top: 6px;
+  isolation: isolate;
+}
+
+.yellow .btn--dark {
+  position: relative;
+  z-index: 2;
+}
+
+.yellow__parrot {
+  width: min(160px, 44vw);
+  height: auto;
+  margin: 0 auto -30px;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 18px 32px rgba(0, 0, 0, 0.22));
+  mix-blend-mode: darken;
+  transform: none;
+}
+
+/* Parrot animation removed by request */
+
+/* Footer */
+.footer {
+  padding: 78px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid rgba(var(--accent-rgb), 0.28);
+}
+
+.footer__center {
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+}
+
+.footer__title {
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  font-size: clamp(38px, 4.2vw, 56px);
+  line-height: 1;
+  margin: 0 0 6px;
+}
+
+.footer__copy {
+  margin: 6px 0 0;
+}
+
+.footer__phone-ico {
+  width: 18px;
+  height: 18px;
+  filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.18));
+}
+
+/* FAB */
+.calc-fab {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 92px;
+  height: 92px;
+  border-radius: 999px;
+  background: var(--yellow);
+  color: #0d0d0d;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 26px 80px rgba(var(--accent-rgb), 0.22);
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  z-index: 60;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+
+.calc-fab::before,
+.calc-fab::after {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border-radius: 999px;
+  border: 2px solid rgba(var(--accent-rgb), 0.35);
+  opacity: 0;
+  transform: scale(0.88);
+  animation: fab-wave 2.4s var(--ease) infinite;
+  pointer-events: none;
+}
+
+.calc-fab::after {
+  inset: -18px;
+  border-color: rgba(var(--accent-rgb), 0.22);
+  animation-delay: 0.65s;
+}
+
+@keyframes fab-wave {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  20% {
+    opacity: 0.75;
+  }
+  70% {
+    opacity: 0.12;
+    transform: scale(1.18);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.28);
+  }
+}
+
+.calc-fab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 30px 90px rgba(var(--accent-rgb), 0.26);
+}
+
+.calc-fab__text {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: center;
+  line-height: 1.15;
+}
+

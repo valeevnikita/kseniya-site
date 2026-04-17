@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
@@ -61,6 +61,7 @@
 
     <main id="main">
       <section id="top" class="hero">
+        <canvas class="hero__particles" data-hero-particles aria-hidden="true"></canvas>
         <div class="container hero__grid">
           <div class="hero__copy" data-animate>
             <h1 class="hero__title">Ксения</h1>
@@ -479,59 +480,59 @@
             <div class="gallery-panel" data-gallery-panel="wedding">
               <div class="gallery" data-gallery>
                 <div class="gallery__grid">
-                  <img src="assets/gallery-1.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-2.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-3.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-4.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-5.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-6.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-7.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-8.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-9.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-10.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-11.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-12.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-13.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-14.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-15.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-16.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-17.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-18.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-19.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-20.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-21.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-22.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-23.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-24.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-25.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-26.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-27.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-28.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-29.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-30.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-31.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-32.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-33.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-34.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-35.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-36.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-37.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-38.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-39.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-40.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-41.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-42.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-43.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-44.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-45.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-46.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-47.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-48.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-49.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-50.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-51.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-52.jpg" alt="" loading="lazy" />
-                  <img src="assets/gallery-53.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-1.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-2.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-3.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-4.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-5.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-6.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-7.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-8.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-9.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-10.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-11.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-12.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-13.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-14.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-15.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-16.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-17.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-18.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-19.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-20.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-21.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-22.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-23.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-24.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-25.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-26.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-27.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-28.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-29.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-30.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-31.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-32.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-33.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-34.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-35.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-36.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-37.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-38.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-39.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-40.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-41.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-42.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-43.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-44.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-45.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-46.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-47.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-48.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-49.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-50.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-51.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-52.jpg" alt="" loading="lazy" />
+                  <img src="assets/gallery/gallery-53.jpg" alt="" loading="lazy" />
                 </div>
                 <button class="btn btn--primary gallery__more" type="button" data-gallery-more>Больше фото</button>
               </div>
@@ -601,8 +602,8 @@
                     <div class="quiz__choices quiz__choices--cards">
                       <button class="choice" type="button" data-choice="Подарок: видеоролик">
                         <div class="choice__media" aria-hidden="true">
-                          <img class="choice__cover" src="assets/quiz-gift-1.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='assets/video-placeholder.svg';" />
-                          <video class="choice__preview" muted playsinline loop preload="none" poster="assets/quiz-gift-1.jpg" data-src="assets/quiz-gift-1.mp4"></video>
+                          <img class="choice__cover" src="assets/quiz/quiz-gift-1.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='assets/video-placeholder.svg';" />
+                          <video class="choice__preview" muted playsinline loop preload="none" poster="assets/quiz/quiz-gift-1.jpg" data-src="assets/quiz/quiz-gift-1.mp4"></video>
                         </div>
                         <div>
                           <strong>Видеоролик история счастья</strong>
@@ -611,8 +612,8 @@
                       </button>
                       <button class="choice" type="button" data-choice="Подарок: сценичный ролик">
                         <div class="choice__media" aria-hidden="true">
-                          <img class="choice__cover" src="assets/quiz-gift-2.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='assets/video-placeholder.svg';" />
-                          <video class="choice__preview" muted playsinline loop preload="none" poster="assets/quiz-gift-2.jpg" data-src="assets/quiz-gift-2.mp4"></video>
+                          <img class="choice__cover" src="assets/quiz/quiz-gift-2.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='assets/video-placeholder.svg';" />
+                          <video class="choice__preview" muted playsinline loop preload="none" poster="assets/quiz/quiz-gift-2.jpg" data-src="assets/quiz/quiz-gift-2.mp4"></video>
                         </div>
                         <div>
                           <strong>Смешной ролик с гостями</strong>
@@ -621,8 +622,8 @@
                       </button>
                       <button class="choice choice--upper" type="button" data-choice="Подарок: не нужен">
                         <div class="choice__media" aria-hidden="true">
-                          <img class="choice__cover" src="assets/quiz-gift-3.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='assets/video-placeholder.svg';" />
-                          <video class="choice__preview" muted playsinline loop preload="none" poster="assets/quiz-gift-3.jpg" data-src="assets/quiz-gift-3.mp4"></video>
+                          <img class="choice__cover" src="assets/quiz/quiz-gift-3.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='assets/video-placeholder.svg';" />
+                          <video class="choice__preview" muted playsinline loop preload="none" poster="assets/quiz/quiz-gift-3.jpg" data-src="assets/quiz/quiz-gift-3.mp4"></video>
                         </div>
                         <div>
                           <strong>Рилс с мероприятия</strong>
@@ -868,7 +869,7 @@
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-5.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-5.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials"></span>
                   </div>
                   <h3 class="review-card__name">Семья Гафуровых</h3>
@@ -884,7 +885,7 @@
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-10.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-10.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials"></span>
                   </div>
                   <h3 class="review-card__name">Игорь и Ольга Агаповы</h3>
@@ -902,7 +903,7 @@
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-4.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-4.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials"></span>
                   </div>
                   <h3 class="review-card__name">Абдулвалиевы</h3>
@@ -921,7 +922,7 @@
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-8.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-8.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials"></span>
                   </div>
                   <h3 class="review-card__name">Ольга и Юсуф</h3>
@@ -936,7 +937,7 @@
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-1.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-1.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials"></span>
                   </div>
                   <h3 class="review-card__name">Сергей и Татьяна Наумовы</h3>
@@ -955,7 +956,7 @@
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-2.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-2.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials"></span>
                   </div>
                   <h3 class="review-card__name">Виктория и Александр</h3>
@@ -973,7 +974,7 @@
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-9.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-9.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials"></span>
                   </div>
                   <h3 class="review-card__name">Анастасия и Денис</h3>
@@ -993,7 +994,7 @@
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-7.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-7.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">ОО</span>
                   </div>
                   <h3 class="review-card__name">Пара Плехановых</h3>
@@ -1013,7 +1014,7 @@
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-6.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-6.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials"></span>
                   </div>
                   <h3 class="review-card__name">Елена и Олег</h3>
@@ -1032,7 +1033,7 @@
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-3.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-3.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials"></span>
                   </div>
                   <h3 class="review-card__name">Ирина и Александр Лялины</h3>
@@ -1047,7 +1048,7 @@
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-11.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-11.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials"></span>
                   </div>
                   <h3 class="review-card__name">Антон и Ирина</h3>
@@ -1064,7 +1065,7 @@
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-12.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-12.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials"></span>
                   </div>
                   <h3 class="review-card__name">Виктор и Екатерина</h3>
@@ -1079,7 +1080,7 @@
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-13.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-13.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials"></span>
                   </div>
                   <h3 class="review-card__name">Семья Шадриных</h3>
@@ -1096,7 +1097,7 @@
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-14.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-14.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials"></span>
                   </div>
                   <h3 class="review-card__name">Семья Юмановых</h3>
@@ -1111,7 +1112,7 @@
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-15.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-15.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials"></span>
                   </div>
                   <h3 class="review-card__name">Алексей и Елена Симаковы</h3>
@@ -1130,7 +1131,7 @@
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-16.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-16.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials"></span>
                   </div>
                   <h3 class="review-card__name">Деревянкины</h3>
@@ -1144,7 +1145,7 @@
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-17.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-17.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials"></span>
                   </div>
                   <h3 class="review-card__name">Ильназ и Доминика</h3>
@@ -1159,7 +1160,7 @@
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-18.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-18.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials"></span>
                   </div>
                   <h3 class="review-card__name">Игорь и Анна</h3>
@@ -1173,7 +1174,7 @@
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-19.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-18.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">ЕЛ</span>
                   </div>
                   <h3 class="review-card__name">Евгений и Лилия</h3>
@@ -1187,7 +1188,7 @@
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-20.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-20.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials"></span>
                   </div>
                   <h3 class="review-card__name">Семья Ляховых</h3>
@@ -1204,7 +1205,7 @@
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-21.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-21.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials"></span>
                   </div>
                   <h3 class="review-card__name">Кафорины</h3>
@@ -1218,7 +1219,7 @@
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-22.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-22.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials"></span>
                   </div>
                   <h3 class="review-card__name">Марина и Евгений</h3>
@@ -1237,7 +1238,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-23.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-23.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials"></span>
                   </div>
                   <h3 class="review-card__name">Влад и Евдокия</h3>
@@ -1255,7 +1256,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-24.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-23.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">В</span>
                   </div>
                   <h3 class="review-card__name">Вьюновы</h3>
@@ -1271,7 +1272,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-25.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-25.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials"></span>
                   </div>
                   <h3 class="review-card__name">Семья Валитовых</h3>
@@ -1287,7 +1288,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-26.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-25.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">СП</span>
                   </div>
                   <h3 class="review-card__name">Семья Поповых</h3>
@@ -1305,7 +1306,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-27.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-27.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">ДА</span>
                   </div>
                   <h3 class="review-card__name">Дмитрий и Анастасия</h3>
@@ -1325,7 +1326,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-28.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-28.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">НЮ</span>
                   </div>
                   <h3 class="review-card__name">Никита и Юлия Ивановы</h3>
@@ -1343,7 +1344,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-29.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-29.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">СМ</span>
                   </div>
                   <h3 class="review-card__name">Семья Марусиных</h3>
@@ -1360,7 +1361,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-30.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-29.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">С</span>
                   </div>
                   <h3 class="review-card__name">Статенины</h3>
@@ -1379,7 +1380,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-31.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-34.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">СП</span>
                   </div>
                   <h3 class="review-card__name">Семья Пылёвых</h3>
@@ -1393,7 +1394,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-32.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-35.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">ВЕ</span>
                   </div>
                   <h3 class="review-card__name">Виктор и Екатерина</h3>
@@ -1413,7 +1414,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-33.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-36.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">ДА</span>
                   </div>
                   <h3 class="review-card__name">Дмитрий и Анастасия</h3>
@@ -1433,7 +1434,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-34.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-34.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">СП</span>
                   </div>
                   <h3 class="review-card__name">Семья Петровых</h3>
@@ -1451,7 +1452,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-35.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-35.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">СС</span>
                   </div>
                   <h3 class="review-card__name">Семья Статениных</h3>
@@ -1465,7 +1466,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-36.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-36.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">СМ</span>
                   </div>
                   <h3 class="review-card__name">Семья Мухановых</h3>
@@ -1479,7 +1480,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-37.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-37.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">МК</span>
                   </div>
                   <h3 class="review-card__name">Максим и Кристина Васины</h3>
@@ -1493,7 +1494,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-38.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-38.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">АС</span>
                   </div>
                   <h3 class="review-card__name">Артем и Светлана</h3>
@@ -1509,7 +1510,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-39.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-39.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">АМ</span>
                   </div>
                   <h3 class="review-card__name">Александр и Мария</h3>
@@ -1525,7 +1526,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-40.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-39.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">ВВ</span>
                   </div>
                   <h3 class="review-card__name">Влад и Валентина</h3>
@@ -1539,7 +1540,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-42.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-42.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">ИК</span>
                   </div>
                   <h3 class="review-card__name">Иван и Карина</h3>
@@ -1553,7 +1554,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-42.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-42.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">ДД</span>
                   </div>
                   <h3 class="review-card__name">Денис и Диана</h3>
@@ -1567,7 +1568,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-43.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-43.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">ПЮ</span>
                   </div>
                   <h3 class="review-card__name">Павел и Юлия</h3>
@@ -1583,7 +1584,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-44.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-44.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">ВТ</span>
                   </div>
                   <h3 class="review-card__name">Валерий и Татьяна</h3>
@@ -1600,7 +1601,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-45.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-45.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">СМ</span>
                   </div>
                   <h3 class="review-card__name">Семья Мироновых</h3>
@@ -1616,7 +1617,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-46.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-46.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">З</span>
                   </div>
                   <h3 class="review-card__name">Зазнаевы</h3>
@@ -1632,7 +1633,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-47.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-47.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">ИЕ</span>
                   </div>
                   <h3 class="review-card__name">Иван и Екатерина Исаевы</h3>
@@ -1650,7 +1651,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-48.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-48.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">АЕ</span>
                   </div>
                   <h3 class="review-card__name">Андрей и Лена Смирновы</h3>
@@ -1666,7 +1667,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-49.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-49.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">АЕ</span>
                   </div>
                   <h3 class="review-card__name">Артем и Екатерина</h3>
@@ -1686,7 +1687,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-card__avatar" aria-hidden="true">
-                    <img src="assets/review-50.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/reviews/review-49.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                     <span class="review-card__initials">АЕ</span>
                   </div>
                   <h3 class="review-card__name">Семья Губернаторовых</h3>
@@ -1708,7 +1709,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
                   <article class="review-card">
                     <div class="review-card__top">
                       <div class="review-card__avatar" aria-hidden="true">
-                        <img src="assets/review-jubilee-1.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                        <img src="assets/reviews/review-jubilee-1.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                         <span class="review-card__initials"></span>
                       </div>
                       <h3 class="review-card__name">Наталья</h3>
@@ -1721,7 +1722,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
                   <article class="review-card">
                     <div class="review-card__top">
                       <div class="review-card__avatar" aria-hidden="true">
-                        <img src="assets/review-jubilee-2.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                        <img src="assets/reviews/review-jubilee-2.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                         <span class="review-card__initials"></span>
                       </div>
                       <h3 class="review-card__name">Кристина Пантелеева</h3>
@@ -1734,7 +1735,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
                   <article class="review-card">
                     <div class="review-card__top">
                       <div class="review-card__avatar" aria-hidden="true">
-                        <img src="assets/review-jubilee-3.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                        <img src="assets/reviews/review-jubilee-3.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                         <span class="review-card__initials"></span>
                       </div>
                       <h3 class="review-card__name">Юлия</h3>
@@ -1747,7 +1748,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
                   <article class="review-card">
                     <div class="review-card__top">
                       <div class="review-card__avatar" aria-hidden="true">
-                        <img src="assets/review-jubilee-4.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                        <img src="assets/reviews/review-jubilee-4.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                         <span class="review-card__initials"></span>
                       </div>
                       <h3 class="review-card__name">Ольга</h3>
@@ -1762,7 +1763,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
                   <article class="review-card">
                     <div class="review-card__top">
                       <div class="review-card__avatar" aria-hidden="true">
-                        <img src="assets/review-jubilee-5.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                        <img src="assets/reviews/review-jubilee-5.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                         <span class="review-card__initials"></span>
                       </div>
                       <h3 class="review-card__name">Татьяна</h3>
@@ -1775,7 +1776,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
                   <article class="review-card">
                     <div class="review-card__top">
                       <div class="review-card__avatar" aria-hidden="true">
-                        <img src="assets/review-jubilee-6.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                        <img src="assets/reviews/review-jubilee-6.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                         <span class="review-card__initials"></span>
                       </div>
                       <h3 class="review-card__name">Любовь</h3>
@@ -1788,7 +1789,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
                   <article class="review-card">
                     <div class="review-card__top">
                       <div class="review-card__avatar" aria-hidden="true">
-                        <img src="assets/review-jubilee-7.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                        <img src="assets/reviews/review-jubilee-6.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                         <span class="review-card__initials"></span>
                       </div>
                       <h3 class="review-card__name">Алена Емельянова</h3>
@@ -1801,7 +1802,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
                   <article class="review-card">
                     <div class="review-card__top">
                       <div class="review-card__avatar" aria-hidden="true">
-                        <img src="assets/review-jubilee-8.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                        <img src="assets/reviews/review-jubilee-8.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                         <span class="review-card__initials"></span>
                       </div>
                       <h3 class="review-card__name">Наталья Белова</h3>
@@ -1815,7 +1816,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
                   <article class="review-card">
                     <div class="review-card__top">
                       <div class="review-card__avatar" aria-hidden="true">
-                        <img src="assets/review-jubilee-9.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                        <img src="assets/reviews/review-jubilee-8.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                         <span class="review-card__initials"></span>
                       </div>
                       <h3 class="review-card__name">Наталья Афанасьева</h3>
@@ -1830,7 +1831,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
                   <article class="review-card">
                     <div class="review-card__top">
                       <div class="review-card__avatar" aria-hidden="true">
-                        <img src="assets/review-jubilee-10.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                        <img src="assets/reviews/review-jubilee-12.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                         <span class="review-card__initials"></span>
                       </div>
                       <h3 class="review-card__name">Анна Аляева</h3>
@@ -1843,7 +1844,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
                   <article class="review-card">
                     <div class="review-card__top">
                       <div class="review-card__avatar" aria-hidden="true">
-                        <img src="assets/review-jubilee-11.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                        <img src="assets/reviews/review-jubilee-12.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                         <span class="review-card__initials"></span>
                       </div>
                       <h3 class="review-card__name">Наталья Курушина</h3>
@@ -1855,7 +1856,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
                   <article class="review-card">
                     <div class="review-card__top">
                       <div class="review-card__avatar" aria-hidden="true">
-                        <img src="assets/review-jubilee-12.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                        <img src="assets/reviews/review-jubilee-12.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                         <span class="review-card__initials"></span>
                       </div>
                       <h3 class="review-card__name">Любовь Борисова</h3>
@@ -1877,7 +1878,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
                   <article class="review-card">
                     <div class="review-card__top">
                       <div class="review-card__avatar" aria-hidden="true">
-                        <img src="assets/review-graduation-1.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                        <img src="assets/reviews/review-graduation-3.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                         <span class="review-card__initials"></span>
                       </div>
                       <h3 class="review-card__name">Наталья Петухова</h3>
@@ -1892,7 +1893,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
                   <article class="review-card">
                     <div class="review-card__top">
                       <div class="review-card__avatar" aria-hidden="true">
-                        <img src="assets/review-graduation-2.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                        <img src="assets/reviews/review-graduation-3.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                         <span class="review-card__initials"></span>
                       </div>
                       <h3 class="review-card__name">Ольга</h3>
@@ -1907,7 +1908,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
                   <article class="review-card">
                     <div class="review-card__top">
                       <div class="review-card__avatar" aria-hidden="true">
-                        <img src="assets/review-graduation-3.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                        <img src="assets/reviews/review-graduation-3.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                         <span class="review-card__initials"></span>
                       </div>
                       <h3 class="review-card__name">Екатерина Муренко</h3>
@@ -1922,7 +1923,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
                   <article class="review-card">
                     <div class="review-card__top">
                       <div class="review-card__avatar" aria-hidden="true">
-                        <img src="assets/review-graduation-4.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                        <img src="assets/reviews/review-graduation-3.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                         <span class="review-card__initials"></span>
                       </div>
                       <h3 class="review-card__name">Нина</h3>
@@ -1936,7 +1937,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
                   <article class="review-card">
                     <div class="review-card__top">
                       <div class="review-card__avatar" aria-hidden="true">
-                        <img src="assets/review-graduation-5.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                        <img src="assets/reviews/review-graduation-3.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
                         <span class="review-card__initials"></span>
                       </div>
                       <h3 class="review-card__name">Наталья Габунова</h3>
@@ -2057,12 +2058,12 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
         <div class="container footer__center" data-animate>
           <h2 class="footer__title">Познакомимся?</h2>
           <a class="btn btn--primary footer__phone" href="tel:+79278356376">
-            <img class="footer__phone-ico" src="assets/icon-phone.svg" alt="" aria-hidden="true" />
+            <img class="footer__phone-ico" src="assets/icons/icon-phone.svg" alt="" aria-hidden="true" />
             +7 (927) 835-63-76
           </a>
           <div class="footer__social">
             <a class="icon-link" href="https://vk.com/ksu173" target="_blank" rel="noreferrer" aria-label="VK">
-              <img src="assets/icon-vk.svg" alt="" />
+              <img src="assets/icons/icon-vk.svg" alt="" />
             </a>
           </div>
         </div>
@@ -2107,6 +2108,18 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
       </div>
     </div>
 
+    <script src="js/lib/dom.js" defer></script>
+    <script src="js/features/core.js" defer></script>
+    <script src="js/features/modal.js" defer></script>
+    <script src="js/features/video.js" defer></script>
+    <script src="js/features/tabs.js" defer></script>
+    <script src="js/features/gallery.js" defer></script>
+    <script src="js/features/reviews.js" defer></script>
+    <script src="js/features/quiz.js" defer></script>
+    <script src="js/features/quiz-extras.js" defer></script>
+    <script src="js/features/particles-hero.js" defer></script>
     <script src="js/main.js" defer></script>
   </body>
 </html>
+
+
