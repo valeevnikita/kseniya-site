@@ -4,6 +4,11 @@
   padding: 64px 0 84px;
   overflow: hidden;
   isolation: isolate;
+  /* Fill viewport (minus fixed header), so no "black strip" below */
+  min-height: calc(100vh - 74px);
+  min-height: calc(100svh - 74px);
+  display: grid;
+  align-items: center;
 }
 
 .hero::before {
@@ -64,7 +69,7 @@
 
 .hero__visual {
   position: relative;
-  min-height: 420px;
+  min-height: 360px;
   display: grid;
   place-items: center;
 }
@@ -82,16 +87,13 @@
 
 .hero__avatar {
   position: relative;
-  width: min(440px, 66vw);
-  aspect-ratio: 1 / 1;
-  border-radius: 999px;
+  width: min(440px, 62vw);
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   background: #0b0b0b;
-  /* Ring: black gap (3–5px) + yellow hoop (3–5px) */
-  box-shadow:
-    0 0 0 5px #0b0b0b,
-    0 0 0 7px var(--yellow),
-    0 30px 70px rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
 }
 
 .hero__photo {

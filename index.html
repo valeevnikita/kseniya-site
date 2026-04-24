@@ -479,7 +479,9 @@
           <div class="gallery-panels">
             <div class="gallery-panel" data-gallery-panel="wedding">
               <div class="gallery" data-gallery>
-                <div class="gallery__grid">
+                <div class="gallery-rail-wrap" data-gallery-rail-wrap aria-label="Свадебные фото">
+                  <button class="rail-nav" type="button" data-gallery-prev aria-label="Листать влево">‹</button>
+                  <div class="gallery-rail" data-gallery-rail>
                   <img src="assets/gallery/gallery-1.jpg" alt="" loading="lazy" />
                   <img src="assets/gallery/gallery-2.jpg" alt="" loading="lazy" />
                   <img src="assets/gallery/gallery-3.jpg" alt="" loading="lazy" />
@@ -533,14 +535,17 @@
                   <img src="assets/gallery/gallery-51.jpg" alt="" loading="lazy" />
                   <img src="assets/gallery/gallery-52.jpg" alt="" loading="lazy" />
                   <img src="assets/gallery/gallery-53.jpg" alt="" loading="lazy" />
+                  </div>
+                  <button class="rail-nav" type="button" data-gallery-next aria-label="Листать вправо">›</button>
                 </div>
-                <button class="btn btn--primary gallery__more" type="button" data-gallery-more>Больше фото</button>
               </div>
             </div>
 
             <div class="gallery-panel" data-gallery-panel="jubilee" hidden>
               <div class="gallery" data-gallery>
-                <div class="gallery__grid">
+                <div class="gallery-rail-wrap" data-gallery-rail-wrap aria-label="Юбилейные фото">
+                  <button class="rail-nav" type="button" data-gallery-prev aria-label="Листать влево">‹</button>
+                  <div class="gallery-rail" data-gallery-rail>
                   <img src="assets/jubilee-1.jpg" alt="" loading="lazy" />
                   <img src="assets/jubilee-2.jpg" alt="" loading="lazy" />
                   <img src="assets/jubilee-3.jpg" alt="" loading="lazy" />
@@ -553,22 +558,29 @@
                   <img src="assets/jubilee-10.jpg" alt="" loading="lazy" />
                   <img src="assets/jubilee-11.jpg" alt="" loading="lazy" />
                   <img src="assets/jubilee-12.jpg" alt="" loading="lazy" />
+                  </div>
+                  <button class="rail-nav" type="button" data-gallery-next aria-label="Листать вправо">›</button>
                 </div>
-                <button class="btn btn--primary gallery__more" type="button" data-gallery-more>Больше фото</button>
               </div>
             </div>
 
             <div class="gallery-panel" data-gallery-panel="graduation" hidden>
-              <div class="gallery" data-gallery data-gallery-auto="graduation" data-gallery-count="42" data-gallery-ext="jpg">
-                <div class="gallery__grid"></div>
-                <button class="btn btn--primary gallery__more" type="button" data-gallery-more>Больше фото</button>
+              <div class="gallery" data-gallery data-gallery-auto="graduation" data-gallery-count="36" data-gallery-ext="jpg">
+                <div class="gallery-rail-wrap" data-gallery-rail-wrap aria-label="Выпускные фото">
+                  <button class="rail-nav" type="button" data-gallery-prev aria-label="Листать влево">‹</button>
+                  <div class="gallery-rail" data-gallery-rail></div>
+                  <button class="rail-nav" type="button" data-gallery-next aria-label="Листать вправо">›</button>
+                </div>
               </div>
             </div>
 
             <div class="gallery-panel" data-gallery-panel="corporate" hidden>
-              <div class="gallery" data-gallery data-gallery-auto="korp" data-gallery-count="17" data-gallery-ext="jpg">
-                <div class="gallery__grid"></div>
-                <button class="btn btn--primary gallery__more" type="button" data-gallery-more>Больше фото</button>
+              <div class="gallery" data-gallery data-gallery-auto="korp" data-gallery-count="23" data-gallery-ext="jpg">
+                <div class="gallery-rail-wrap" data-gallery-rail-wrap aria-label="Корпоративы фото">
+                  <button class="rail-nav" type="button" data-gallery-prev aria-label="Листать влево">‹</button>
+                  <div class="gallery-rail" data-gallery-rail></div>
+                  <button class="rail-nav" type="button" data-gallery-next aria-label="Листать вправо">›</button>
+                </div>
               </div>
             </div>
           </div>
@@ -2044,12 +2056,12 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
         </div>
       </section>
 
-      <section class="section section--yellow">
-        <div class="container yellow" data-animate>
-          <h2 class="yellow__title">95% людей становятся счастливее при нажатии на эту кнопку</h2>
-          <div class="yellow__center">
-            <img class="yellow__parrot" src="assets/bird.gif" alt="" aria-hidden="true" data-parrot />
-            <a class="btn btn--dark btn--xl" href="#quiz">Нажать на кнопку</a>
+      <section class="section section--cta">
+        <canvas class="cta__particles" data-cta-particles aria-hidden="true"></canvas>
+        <div class="container cta" data-animate>
+          <h2 class="cta__title">Сделайте первый шаг к идеальному мероприятию</h2>
+          <div class="cta__center">
+            <a class="btn btn--dark btn--xl" href="#quiz" data-cta-button>Нажать на кнопку</a>
           </div>
         </div>
       </section>
@@ -2118,6 +2130,7 @@ P. S.: если хотите отмечать свадьбу, юбилеи и д
     <script src="js/features/quiz.js" defer></script>
     <script src="js/features/quiz-extras.js" defer></script>
     <script src="js/features/particles-hero.js" defer></script>
+    <script src="js/features/particles-cta.js" defer></script>
     <script src="js/main.js" defer></script>
   </body>
 </html>

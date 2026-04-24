@@ -1,4 +1,48 @@
-﻿function initGallery() {
+function initGalleryRails() {
+  $$("[data-gallery-rail-wrap]").forEach((wrap) => {
+    const rail = $("[data-gallery-rail]", wrap);
+    const prev = $("[data-gallery-prev]", wrap);
+    const next = $("[data-gallery-next]", wrap);
+    if (!rail || !prev || !next) return;
+
+    const getStep = () => {
+      const items = [...rail.children].filter((el) => el instanceof HTMLElement);
+      if (items.length >= 2) {
+        const step = items[1].offsetLeft - items[0].offsetLeft;
+        return step > 0 ? step : items[0].getBoundingClientRect().width + 18;
+      }
+      const first = items[0];
+      return first ? first.getBoundingClientRect().width + 18 : 320;
+    };
+
+    const update = () => {
+      const atStart = rail.scrollLeft <= 2;
+      const atEnd = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 2;
+      prev.disabled = atStart;
+      next.disabled = atEnd;
+    };
+
+    const scrollByStep = (dir) => {
+      rail.scrollBy({ left: dir * getStep(), behavior: "smooth" });
+      setTimeout(update, 250);
+    };
+
+    prev.addEventListener("click", (e) => {
+      e.preventDefault();
+      scrollByStep(-1);
+    });
+    next.addEventListener("click", (e) => {
+      e.preventDefault();
+      scrollByStep(1);
+    });
+
+    rail.addEventListener("scroll", () => update(), { passive: true });
+    window.addEventListener("resize", () => update());
+    update();
+  });
+}
+
+function initGallery() {
   $$("[data-gallery]").forEach((root) => {
     const btn = $("[data-gallery-more]", root);
     if (!btn) return;
@@ -9,8 +53,6 @@
       const open = root.classList.toggle("is-open");
       btn.textContent = open ? "Свернуть" : "Больше фото";
 
-      // When collapsing, page height changes резко and browser can "jump" вниз.
-      // Keep the button in the same visual place in the viewport.
       if (wasOpen) {
         requestAnimationFrame(() => {
           const yAfter = btn.getBoundingClientRect().top;
@@ -26,11 +68,10 @@ function initAutoGalleries() {
     const kind = gallery.getAttribute("data-gallery-auto");
     const count = Number(gallery.getAttribute("data-gallery-count") || "0");
     const ext = (gallery.getAttribute("data-gallery-ext") || "jpg").trim();
-    const grid = $(".gallery__grid", gallery);
-    if (!kind || !count || !grid) return;
+    const rail = $(".gallery-rail", gallery);
+    if (!kind || !count || !rail) return;
 
-    // Prevent duplicate rendering if init runs more than once
-    grid.innerHTML = "";
+    rail.innerHTML = "";
 
     const frag = document.createDocumentFragment();
     for (let i = 1; i <= count; i++) {
@@ -40,10 +81,9 @@ function initAutoGalleries() {
       img.src = `assets/${kind}-${i}.${ext}`;
       frag.appendChild(img);
     }
-    grid.appendChild(frag);
+    rail.appendChild(frag);
   });
 }
-
 
 function initLightbox() {
   const lightbox = $("[data-lightbox]");
@@ -88,8 +128,8 @@ function initLightbox() {
     if (!img) return;
     const gallery = img.closest("[data-gallery]");
     if (!gallery) return;
-    const grid = $(".gallery__grid", gallery) || gallery;
-    const imgs = $$("img", grid).filter((i) => i.getAttribute("src"));
+    const rail = $(".gallery-rail", gallery) || gallery;
+    const imgs = $$("img", rail).filter((i) => i.getAttribute("src"));
     const i = imgs.indexOf(img);
     if (i < 0) return;
     e.preventDefault();

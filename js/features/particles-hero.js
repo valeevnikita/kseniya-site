@@ -39,15 +39,15 @@ function initHeroParticles() {
 
   const calcCount = (w, h) => {
     const area = Math.max(1, w * h);
-    const density = 0.000055;
-    return clamp(Math.round(area * density), 10, 34);
+    const density = 0.000075;
+    return clamp(Math.round(area * density), 14, 46);
   };
 
   const makeBalloon = () => {
     const base = pick(palette);
     const scale = rand(0.75, 1.25);
     const r = rand(10, 22) * scale;
-    const speed = rand(0.22, 0.55) * (22 / r);
+    const speed = rand(0.22, 0.55) * (22 / r) * 1.2;
     const sway = rand(0.4, 1.0) * (r / 18);
     const drift = rand(-0.2, 0.2);
     const hueLift = rand(0.92, 1.08);
@@ -270,4 +270,3 @@ function initHeroParticles() {
   resize();
   start();
 }
-
