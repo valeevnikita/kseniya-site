@@ -3,7 +3,8 @@
   .hero__grid,
   .about,
   .equipment,
-  .get {
+  .get,
+  .priorities {
     grid-template-columns: 1fr;
   }
 
@@ -66,6 +67,10 @@
     right: 8px;
     bottom: -18px;
   }
+
+  .prio-card {
+    --prio-x: 0px;
+  }
 }
 
 @media (max-width: 720px) {
@@ -92,6 +97,15 @@
 
   .equipment__title {
     font-size: clamp(26px, 7.2vw, 38px);
+  }
+
+  .section--equipment-showcase .equipment__media {
+    justify-items: center;
+  }
+
+  .section--equipment-showcase .equipment__media img,
+  .section--equipment-showcase .mixer {
+    transform: none;
   }
 
   .trust-marquee {

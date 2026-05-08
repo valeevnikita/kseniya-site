@@ -19,5 +19,6 @@ initLightbox();
 initQuiz();
 initCalcFab();
 initQuizGiftPreviews();
+initPrioritiesParallax();
 initHeroParticles();
 initCtaParticles();
