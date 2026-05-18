@@ -1,7 +1,6 @@
 ﻿setYear();
 initSelectedStyles();
 initMenu();
-initSplash();
 initScrollReveal();
 initMixerImageFallback();
 initParrotFallback();

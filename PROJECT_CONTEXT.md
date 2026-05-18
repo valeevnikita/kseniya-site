@@ -86,7 +86,7 @@ events/ (папка-артефакт: внутри только свой `.git` 
 
 ### `js/main.js`
 Содержит только последовательные вызовы:
-`setYear()`, `initMenu()`, `initSplash()`, `initScrollReveal()`, `initMixerImageFallback()`, `initParrotFallback()`, `initModal()`,
+`setYear()`, `initMenu()`, `initScrollReveal()`, `initMixerImageFallback()`, `initParrotFallback()`, `initModal()`,
 `initVideoCats()`, `initVideoRails()`, `initGalleryCats()`, `initAutoGalleries()`, `initGallery()`, `initReviewsSlider()`,
 `initReviewsCats()`, `initReviewModal()`, `initLightbox()`, `initQuiz()`, `initCalcFab()`, `initQuizGiftPreviews()`,
 `initHeroParticles()`.
@@ -101,7 +101,7 @@ events/ (папка-артефакт: внутри только свой `.git` 
 ### `js/features/core.js`
 - `setYear()` — подставляет год в `[data-year]`.
 - `initMenu()` — бургер‑меню (`data-header`, `data-menu`, `data-menu-button`, `data-menu-close`), блокирует скролл при открытии.
-- `initSplash()` — заставка `data-splash` (таймер ~2с, клик — закрыть; уважает `prefers-reduced-motion`; ждёт `document.fonts.ready`).
+~~`initSplash()`~~ — заставка `data-splash` (отключена: splash-экран удалён из `index.html`, вызов убран из `js/main.js`).
 - `initScrollReveal()` — анимации появления по `data-animate` через `IntersectionObserver`.
 - `initMixerImageFallback()` — для блока `data-mixer`: пытается показать `<img data-mixer-img>`, иначе оставляет SVG‑fallback.
 - `initParrotFallback()` — если GIF не грузится, подменяет на `assets/party-parrot.svg` (элемент `data-parrot`).
@@ -161,7 +161,6 @@ events/ (папка-артефакт: внутри только свой `.git` 
 
 Ключевые группы:
 - Меню: `data-header`, `data-menu`, `data-menu-button`, `data-menu-close`.
-- Splash: `data-splash`.
 - Видео: `data-video`, `data-video-cats`, `data-video-cat`, `data-video-panel`, `data-video-rail-wrap`, `data-video-rail`, `data-rail-prev`, `data-rail-next`.
 - Галерея: `data-gallery-cats`, `data-gallery-cat`, `data-gallery-panel`, `data-gallery`, `data-gallery-more`, `data-gallery-auto`, `data-gallery-count`, `data-gallery-ext`.
 - Lightbox: `data-lightbox`, `data-lightbox-img`, `data-lightbox-prev/next`, `data-lightbox-close`.
@@ -195,4 +194,3 @@ events/ (папка-артефакт: внутри только свой `.git` 
   - квиз: `js/features/quiz.js`, `js/features/quiz-extras.js`
   - частицы hero: `js/features/particles-hero.js`
 - Контакты (VK/телефон): `index.html` + логика «отправки» в `js/features/quiz.js`.
-
